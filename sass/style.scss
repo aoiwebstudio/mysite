@@ -1,0 +1,1615 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+$color-main: #3F51B5;
+$color-accent: #E81919;
+$color-text: #333333;
+
+$font-en: 'Lato', sans-serif;
+$font-ja: 'Noto Sans JP', sans-serif;
+
+// レイアウト幅
+$layout-width-inner: 1200px;
+
+// ブレークポイント
+$breakpoints: (
+  'sp': "(max-width: 767px)", 
+  'tab': "(min-width: 768px) and (max-width: #{$layout-width-inner - 1px})", 
+  'pc': "(min-width: #{$layout-width-inner})",
+);
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $font-ja;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #fff;
+  color: $color-text;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.inner {
+  width: $layout-width-inner;
+  max-width: 100%;
+  margin: 0 auto;
+
+  // @include mq('tab') {
+  //   padding-left: 24px;
+  //   padding-right: 24px;
+  // }
+
+  @include mq('sp') {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.section__title {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 28px; //下のバーの高さ分
+  position: relative;
+  font-family: $font-en;
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    width: 60px;
+    height: 4px;
+    background: $color-main;
+
+    @include mq('sp') {
+      width: 42px;
+      height: 3px;
+    }
+  }
+
+  @include mq('sp') {
+    font-size: 26px;
+    padding-bottom: 18px;
+  }
+}
+
+.section {
+  padding: 100px 0 120px;
+
+  @include mq('sp') {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+}
+
+//header----------------------------
+
+.header {
+  background: $color-main;
+  height: 100px;
+  position: fixed; //position: fixed;をすると幅がなくなるのでwidth: 100%;にする
+  width: 100%; //position:fixed;のため
+  box-shadow: 0 3px 3px rgba(#000000, 0.16);
+  z-index: 100;
+  top: 0; //position:fixed;でメインビジュアルが下に隠れたのでメインビジュアルにマージンとトップ100ｐｘをしていしたらヘッダーも下に下がったのでトップ0にした。
+  left: 0;
+
+  @include mq('sp') {
+    height: 60px;
+  }
+
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.header__logo {
+  width: 205px;
+
+  @include mq('sp') {
+    width: 182px;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-family: $font-en;
+
+  @include mq('sp') {
+    display: none;
+  }
+
+  li {
+    &:not(:first-child) {
+      margin-left: 40px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: transparent;
+        transition: all 0.3s ease 0s;
+      }
+
+      &:hover,
+      &.is-active {
+        &::after {
+          background: $color-accent;
+        }
+      }
+    }
+  }
+}
+
+// main-visual---------------------------
+
+.main-visual {
+  height: 600px;
+  width: 100%;
+  background: url(../img/mainvisual.png) no-repeat center center / cover;
+  position: relative;
+  margin-top: 100px;
+
+  @include mq('sp') {
+    margin-top: 60px;
+    height: 420px;
+  }
+}
+
+.main-visual__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.main-visual__title {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.3;
+
+  @include mq('sp') {
+    font-size: 32px;
+  }
+}
+
+.main-visual__lead {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 24px;
+
+  @include mq('sp') {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+
+.main-visual__button {
+  margin-top: 36px;
+
+  @include mq('sp') {
+    margin-top: 28px;
+  }
+
+  a {
+    display: inline-block;
+    width: 390px;
+    max-width: 100%; //最大幅を固定幅（390pxとか）にすると画面を小さくするとはみ出てしまうのでmax-width:100%;にする
+    height: 83px;
+    line-height: 83px;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    background: $color-main;
+    box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 0.16);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease 0s; //対象はall,0.3秒かけてアニメーションさせる,どういったアニーメーションの動きをさせるか、アニメーションのの発動まで何秒待つか？
+  
+
+    @include mq('sp') {
+      width: 280px;
+      height: 60px;
+      line-height: 60px;
+      font-size: 24px;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  background: transparent url(../img/arrow-next@2x.png) no-repeat center center / contain;
+  right: calc(50% - #{$layout-width-inner / 2});
+
+  &::after {
+    display: none;
+  }
+
+  @include mq('tab') {
+    right: 10px;
+  }
+
+  @include mq('sp') {
+    right: 10px;
+  }
+}
+
+.swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  background: transparent url(../img/arrow-prev@2x.png) no-repeat center center / contain;
+  left: calc(50% - #{$layout-width-inner / 2});
+
+  &::after {
+    display: none;
+  }
+
+  @include mq('tab') {
+    left: 10px;
+  }
+
+  @include mq('sp') {
+    left: 10px;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background: #FFFFFF9E;
+  opacity: 1;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #2F7DC8;
+}
+
+
+// card---------------------------------
+.card {
+  background: #efefef;
+  // padding: 100px 0 120px;
+
+  // @include mq('sp') {
+  //   padding-top: 50px;
+  //   padding-bottom: 60px;
+  // }
+}
+
+.card__inner {
+
+}
+
+.card__head {
+  
+}
+
+.card__items {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mq('sp') {
+    margin-top: 42px;
+  }
+}
+
+.card__item {
+  width: calc(33.3% - 24px * 2 / 3);
+  background: #fff;
+  padding: 16px;
+  border-radius: 4px;
+
+  @include mq('pc') {
+    &:not(:nth-child(3n + 1)) {
+      margin-left: 24px;
+    }
+  
+    &:nth-child(n + 4) {
+      margin-top: 24px;
+    }
+  }
+
+  @include mq('tab') {
+    width: calc(50% - 24px * 1 / 2);
+
+    &:not(:nth-child(2n + 1)) {
+      margin-left: 24px;
+    }
+
+    &:nth-child(n + 3) {
+      margin-top: 24px;
+    }
+  }
+
+  @include mq('sp') {
+    width: 100%;
+    margin-left: 0;
+
+    &:nth-child(n + 2) {
+      margin-top: 24px;
+    }
+  }
+}
+
+.card__img {
+  // text-align: center; tabとのときに画像が中央にならないので一つのやりかたとしてある
+  img {
+    width: 100%; //これがもう一つのやりかたでただし、中の画像がぼやけてしまうこともあるので画像を切り出したりすることもする
+  }
+}
+
+.card__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #6f7579;
+  margin-top: 14px;
+}
+
+.card__text {
+  //フォントサイズはボディーと同じなので書かなくて良い
+  color: #6f7579;
+  font-weight: 700;
+  line-height: (24 / 16);
+  margin-top: 14px;
+}
+
+//news----------------------------------
+.news {
+  background: #fff;
+  // padding: 100px 0 120px;
+
+  // @include mq('sp') {
+  //   padding-top: 50px;
+  //   padding-bottom: 60px;
+  // }
+}
+
+.news__inner {
+
+}
+
+.news__head {
+
+}
+
+.news__items {
+  margin: 80px auto 0;  //左右中央にするため
+  width: 800px;
+  max-width: 100%; //固定値に対してセットで付ける、widthが800pxなのでスマホ（400px)のように横幅が800pxない画面でみるとはみ出てしまうのでmax-width100％にすることによってはみ出ずにできる
+
+  @include mq('sp') {
+    margin-top: 40px;
+  }
+}
+
+.news__item {
+  display: flex;
+  padding: 20px 0 12px;
+
+  &:not(:first-child) {
+    border-top: 1px solid #707070;
+  }
+
+  @include mq('sp') {
+    display: block;
+  }
+}
+
+.news__meta {
+  display: flex;
+  width: 185px;
+}
+
+.news__date {
+  width: 105px;
+  padding-top: 3px;
+  font-family: $font-en;
+}
+
+.news__label {
+  
+  a {
+    display: inline-block; //aタグに高さを持たせるため
+    width: 80px;
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    text-align: center;
+    background: #666;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &.is-blue {
+      background: #3F51B5;
+    }
+
+    &.is-red {
+      background: #E81919;
+    }
+  }
+}
+
+.news__title {
+  width: calc(100% - 185px);
+  padding-left: 20px;
+  padding-top: 3px;
+
+  a {
+    text-decoration: none;
+    line-height: (20 / 16); //開業されているので行と行の間（行間）を出すために20/16としている
+    transition: all 0.7s ease 0s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  @include mq('sp') {
+    width: 100%;
+    padding-top: 0;
+    padding-left: 0;
+    margin-top: 6px;
+  }
+}
+
+.news__more {
+  margin-top: 60px;
+  text-align: center;
+  font-family: $font-en;
+
+  a {
+    text-decoration: none;
+    color: #E81919;
+    font-weight: 700;
+    padding-right: 14px;
+    position: relative;
+    transition: all 0.7s ease 0s;
+    
+    &::after {
+      position: absolute; 
+      content: "";
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 7px;
+      height: 11px;
+      background: url(../img/news-arrow.png) no-repeat center center / contain;  //containは縦横比を揃える
+    }
+    
+    &:hover {
+      opacity: 0.7;
+    }
+
+    @include mq('sp') {
+      margin-top: 30px;
+    }
+  }
+}
+
+//price---------------------------------------
+.price {
+  background: #EFEFEF;
+}
+
+.price__inner {
+
+}
+
+.price__head {
+
+}
+
+.price__content {
+  display: flex;
+  margin-top: 80px;
+
+  @include mq('sp') {
+    display: block;
+    margin-top: 40px;
+  }
+}
+
+.price__img {
+  width: 454 / 1200 * 100%; //%で出すとレスポンシブにしやすくなる。
+
+  @include mq('sp') {
+    width: 100%;
+  }
+
+  img {
+
+  }
+}
+
+.price__table {
+  width: (172 + 268 + 268) / 1200 * 100%;
+  margin-left: auto;
+
+  @include mq('sp') {
+    width: 100%;
+    margin-top: 24px;
+  }
+}
+
+.table {
+  border-collapse: collapse; //ボーダーの2重線にしないため。おまじない的な書き方
+  border: 1px solid #707070;
+  background: #fff;
+  font-weight: 700;
+  width: 100%; // テーブルの全体の幅は親要素で指定した％に対して100％にしたいため
+  table-layout: fixed; //にするとテーブルを100％で均等に配分される
+
+  th,
+  td {
+    border: 1px solid #707070;
+    padding: 0 24px;
+    height: 58px;
+    vertical-align: middle;
+  }
+
+  th {
+    background: #999999;
+    color: #fff;
+    text-align: center;
+    font-family: $font-en;
+
+    &:nth-child(1) {
+      width: 172px;
+
+      @include mq('sp') {
+        width: 112px;
+      }
+    }
+  }
+
+  td {
+    text-align: right;
+  }
+}
+
+strong {
+  color: #E81919;
+  line-height: 1.7;
+}
+
+span {
+  font-size: 13px;
+  display: block; //これ自体をディスプレイブロックにすると改行される
+  margin-top: 1px;
+}
+
+.price__attention {
+  font-size: 14px;
+  margin-top: 10px;
+
+  a {
+    font-weight: 700;
+    transition: all 0.7s ease 0s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+//access-----------------------------
+
+.access {
+
+}
+
+.access__inner {
+
+}
+
+.access__head {
+
+}
+
+.access__map {
+  margin: 80px auto 0;
+  width: 800px;
+  max-width: 100%;
+
+  @include mq('sp') {
+    margin-top: 40px;
+  }
+}
+
+.iframe-wrap {
+  width: 100%;
+  padding-top: 400 / 800 * 100%;
+  position: relative;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.access__info {
+  margin: 16px auto 0;
+  width: 800px;
+  max-width: 100%;
+}
+
+.access__info-row {
+  display: flex;
+  align-items: center;
+
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+
+  dt {
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    width: 104px;
+  }
+
+  dd {
+    margin: 0;
+    padding: 0;
+    width: calc(100% - 104px);  //pxがついている場合はcalcを使う
+  }
+}
+
+.access__button {
+  text-align: center;
+  margin-top: 30px;
+
+  a {
+    text-decoration: none;
+    display: inline-block;
+    width: 304px;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    padding: 16px 12px;
+    border-radius: 8px;
+    background: $color-main;
+    box-shadow: 0 3px 6px rgba(#000000, 0.16);
+    position: relative;
+    transition: all 0.7s ease 0s;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      width: 17px;
+      height: 16px;
+      background: url(../img/button-arrow@2x.png) no-repeat center center / contain;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+//contact--------------------------------
+
+.contact {
+  background: #EFEFEF;
+}
+
+.contact__inner {
+
+}
+
+.contact__head {
+
+}
+
+.contact-form__wrap {
+  margin: 80px auto 0;
+  width: 800px;
+  max-width: 100%;
+  background: #fff;
+  padding: 60px;
+
+  @include mq('sp') {
+    margin-top: 40px;
+    padding: 24px;
+  }
+}
+
+.contact-form {
+
+}
+
+.contact-form__dl {
+
+}
+
+.contact-form__row {
+  display: flex;
+
+  @include mq('sp') {
+    display: block;
+  }
+
+  &:not(:first-child) {
+    margin-top: 60px;
+
+    @include mq('sp') {
+      margin-top: 30px;
+    }
+  }
+}
+
+.contact-form__label {
+  width: 160px;
+  padding-top: 6px;
+  margin: 0; //初期化
+  padding-left: 0; //初期化
+  padding-right: 0; //初期化
+  padding-bottom: 0; //初期化
+
+  @include mq('sp') {
+    width: 100%;
+  }
+
+  label {
+    font-weight: 700;
+
+    &.is-required {
+      display: inline-block;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "必須";
+        top: calc(100% + 2px);
+        left: 0;
+        font-size: 14px;
+        font-weight: 700;
+        color: #fff;
+        background: #E81919;
+        text-align: center;
+        border-radius: 4px;
+        padding: 3px 8px;
+        line-height: 1;
+
+        @include mq('sp') {
+          top: 50%;
+          transform: translateY(-50%);
+          left: calc(100% + 6px);
+          width: 44px; //幅がなくなったため指定した
+        }
+      }
+    }
+  }
+}
+
+.contact-form__input {
+  width: calc(100% - 160px);
+  margin: 0; //初期化
+  padding: 0; //初期化
+
+  @include mq('sp') {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  [type="text"] {
+    box-shadow: none; //ブラウザによってはボックスシャドウが規定値で入っていることがあるので
+    border: 1px solid #707070; //これもブラウザによって違いがあるため初期化してあげる
+    background: #fff; //これも初期化する
+    padding: 10px 16px;
+    appearance: none; //これはデフォルトで自由に適用しないでくださいというもの
+    border-radius: 0; //初期化
+    color: inherit;  //初期化
+    font-family: inherit;  //初期化
+    font-size: 14px;  //初期化
+    width: 100%;
+  }
+
+  [type="email"] {
+    box-shadow: none; //ブラウザによってはボックスシャドウが規定値で入っていることがあるので
+    border: 1px solid #707070; //これもブラウザによって違いがあるため初期化してあげる
+    background: #fff; //これも初期化する
+    padding: 10px 16px;
+    appearance: none; //これはデフォルトで自由に適用しないでくださいというもの
+    border-radius: 0; //初期化
+    color: inherit;  //初期化
+    font-family: inherit;  //初期化
+    font-size: 14px;  //初期化
+    width: 100%;
+  }
+
+  select {
+    box-shadow: none; //ブラウザによってはボックスシャドウが規定値で入っていることがあるので
+    border: 1px solid #707070; //これもブラウザによって違いがあるため初期化してあげる
+    background: #fff url(../img/select-arrow@2x.png) no-repeat right 12px center / 17px 14px; //これも初期化する
+    padding: 12px 16px;
+    appearance: none; //これはデフォルトで自由に適用しないでくださいというもの
+    border-radius: 0; //初期化
+    color: inherit;  //初期化
+    font-family: inherit;  //初期化
+    font-size: 14px;  //初期化
+    width: 100%;
+  }
+
+  textarea {
+    height: 240px;
+    box-shadow: none; //ブラウザによってはボックスシャドウが規定値で入っていることがあるので
+    border: 1px solid #707070; //これもブラウザによって違いがあるため初期化してあげる
+    background: #fff; //これも初期化する
+    padding: 10px 16px;
+    appearance: none; //これはデフォルトで自由に適用しないでくださいというもの
+    border-radius: 0; //初期化
+    color: inherit;  //初期化
+    font-family: inherit;  //初期化
+    font-size: 14px;  //初期化
+    width: 100%;
+    resize: none; //サイズを変えることをやめる
+  }
+}
+
+.contact-form__radio {
+  margin-top: 32px;
+
+  @include mq('sp') {
+    margin-top: 26px;
+  }
+
+  [type="radio"] {
+    display: none;
+  }
+
+  span {
+    display: inline-block;
+    padding-left: 26px;
+    margin-right: 36px;
+    position: relative;
+
+    @include mq('sp') {
+      margin-bottom: 8px;
+      margin-right: 20px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 20px;
+      border: 1px solid #707070;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: $color-main;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      display: none;
+    }
+  }
+
+  [type="radio"]:checked + span {
+    &::after {
+      display: block;
+    }
+  }
+}
+
+.contact-form__check {
+  margin-top: 63px;
+  text-align: center;
+
+  @include mq('sp') {
+    margin-top: 40px;
+  }
+
+  [type="checkbox"] {
+    display: none;
+  }
+
+  span {
+    display: inline-block;
+    padding-left: 49px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 25px;
+      height: 25px;
+      background: #fff;
+      border: 1px solid #707070;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 25px;
+      height: 25px;
+      border: 1px solid #707070;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      background: transparent url(../img/checkbox@2x.png) no-repeat center center / contain;
+      display: none;
+    }
+  }
+
+  [type="checkbox"]:checked + span {
+    &::after {
+      display: block;
+    }
+  }
+
+  a {
+    font-weight: 700;
+    transition: all 0.7s ease 0s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.contact-form__button {
+  margin-top: 30px;
+  text-align: center;
+
+  [type="submit"] {
+    background: $color-main url(../img/button-arrow@2x.png) no-repeat right 12px center / 17px 16px;
+    width: 304px;
+    display: inline-block;
+    font-weight: 700;
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(#000000, 0.16);
+    appearance: none; //これはデフォルトで自由に適用しないでくださいというもの
+    font-family: inherit;  //初期化
+    border: none;  //初期化
+    font-size: inherit; //標準で当たっているcssが強いため
+    cursor: pointer;
+    transition: all 0.7s ease 0s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+//footer--------------------------
+
+.footer {
+  background: linear-gradient(to bottom, #666666, #333333); //上から下へ、始点、終点
+  padding: 60px 0 24px;
+  color: #ffff;
+
+  @include mq('sp') {
+    padding-top: 30px;
+    padding-bottom: 14px;
+  }
+}
+
+.footer__inner {
+
+}
+
+.footer__content {
+display: flex;
+
+  @include mq('sp') {
+    display: block;
+  }
+}
+
+.footer__left {
+  width: 34%;
+
+  @include mq('sp') {
+    width: 100%;
+  }
+}
+
+.footer__logo {
+
+  a {
+
+  }
+
+  img {
+    width: 205px;
+  }
+}
+
+.footer__address,
+.footer__tel {
+  font-size: 14px;
+}
+
+.footer__address {
+  margin-top: 26px;
+
+  @include mq('sp') {
+    margin-top: 13px;
+  }
+}
+
+.footer__tel {
+  margin-top: 10px;
+
+  @include mq('sp') {
+    margin-top: 6px;
+  }
+}
+
+.footer__center {
+  width: 44%;
+
+  @include mq('sp') {
+    width: 100%;
+    margin-top: 24px;
+  }
+}
+
+.footer__nav {
+  display: flex;
+  font-family: $font-en;
+
+  li {
+    &:not(:first-child) {
+      margin-left: 40px;
+
+      @include mq('sp') {
+        margin-left: 20px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      transition: all 0.7s ease 0s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.footer__right {
+  width: 16%;
+
+  @include mq('sp') {
+    width: 100%;
+    margin-top: 24px;
+  }
+}
+
+.footer__sns {
+  display: flex;
+  justify-content: flex-end;
+
+  @include mq('sp') {
+    justify-content: center;
+  }
+
+  li {
+    &:not(:first-child) {
+      margin-left: 16px;
+    }
+
+    a {
+      text-decoration: none;
+      transition: all 0.7s ease 0s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    img {
+      width: 30px;
+    }
+  }
+}
+
+.footer__copy {
+  margin-top: 46px;
+  font-size: 14px;
+  text-align: center;
+  font-family: $font-en;
+
+  @include mq('sp') {
+    margin-top: 22px;
+  }
+}
+
+.to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
+
+  @include mq('sp') {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  a {
+    text-decoration: none;
+    transition: all 0.7s ease 0s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    img {
+      width: 60px;
+
+      @include mq('sp') {
+        width: 40px;
+      }
+    }
+  }
+}
+
+//drawer-------------------
+
+.drawer-icon {
+  position: fixed;
+  top: 20px;
+  right: 16px;
+  z-index: 300;
+  display: none;
+  // transition: transform 0.5s ease 0s;
+
+  @include mq('sp') {
+    display: block;
+  }
+
+  &.is-active {
+    transform: translateX(-200px);
+
+    .drawer-icon__bar1 {
+      transform: rotate(-45deg);
+      top: 8px;
+    }
+    
+    .drawer-icon__bar2 {
+      display: none;
+    }
+    
+    .drawer-icon__bar3 {
+      transform: rotate(45deg);
+      top: 8px;
+    }
+  }
+}
+
+.drawer-icon__bars {
+  width: 22px;
+  height: 20px;
+  display: block;
+  position: relative;
+}
+
+.drawer-icon__bar1,
+.drawer-icon__bar2,
+.drawer-icon__bar3 {
+  position: absolute;
+  width: 22px;
+  height: 4px;
+  background: #fff;
+  top: 0;
+  left: 0;
+}
+
+.drawer-icon__bar1 {
+  top: 0;
+}
+
+.drawer-icon__bar2 {
+  top: 8px;
+}
+
+.drawer-icon__bar3 {
+  top: 16px;
+}
+
+.drawer-content {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(#000000, 0.16);
+  z-index: 299;
+  transform: translateX(105%);
+  transition: transform 0.5s ease 0s;
+
+  &.is-active {
+    transform: translateX(0);
+  }
+}
+
+.drawer-content__items {
+
+}
+
+.drawer-content__item {
+  border-bottom: 1px dotted #707070;
+
+  a {
+    display: block;
+    color: #707070;
+    text-decoration: none;
+    padding: 18px 20px;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 11px;
+      background: url(../img/arrow-b@2x.png) no-repeat center center / contain;
+    }
+  }
+}
+
+.drawer-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(#000000, 0.8);
+  z-index: 298;
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+//qa---------------------------------
+
+.qa {
+
+}
+
+.qa__inner {
+
+}
+
+.qa__head {
+
+}
+
+.qa__items {
+  width: 900px;
+  max-width: 100%;
+  margin: 80px auto 0;
+}
+
+.qa__item {
+  &:nth-child(n + 2) {
+    margin-top: 24px;
+  }
+}
+
+.qa-box {
+  border: 1px solid $color-main;
+}
+
+.qa-box__q {
+  color: #fff;
+  background: $color-main;
+  padding: 12px 56px;
+  font-weight: 700;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "Q";
+    top: 12px;
+    left: 20px;
+  }
+}
+
+.qa-box__icon {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &.is-open {
+    .qa-box__bar2 {
+      // display: none;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.qa-box__bar1 {
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  background: #fff;
+  border-radius: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.qa-box__bar2 {
+  position: absolute;
+  width: 2px;
+  height: 14px;
+  background: #fff;
+  border-radius: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  transition: all 0.3s ease 0s;
+}
+
+.qa-box__a {
+  background: #fff;
+  font-weight: 700;
+  color: $color-main;
+  line-height: (24 / 16);
+  padding: 16px 30px 16px 20px;
+  display: none;
+}
+
+.qa-box__content {
+  position: relative;
+  padding-left: 35px;
+
+  &::before {
+    position: absolute;
+    content: "A";
+    top: 0;
+    left: 0;
+  }
+}
+
+//モーダル------------------------------
+
+.modal-contact {
+  position: fixed;
+  z-index: 501;
+  width: 900px;
+  max-width: calc(100% - 24px * 2);
+  height: 652px;
+  max-height: calc(100% - 24px * 2);
+  background: #fff;
+  box-shadow: 0 0 3px rgba(#000000, 0.16);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 60px;
+  color: #707070;
+  display: none;
+
+  @include mq('sp') {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.modal-contact__head {
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 24px;
+  text-align: center;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 2px;
+    background: $color-main;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+}
+
+.modal-contact__content {
+  margin-top: 40px;
+  height: calc(100% - 84px - 108px);
+  overflow: auto;
+
+  > :first-child {
+    margin-top: 0;
+  }
+}
+
+.modal-contact__sub-head {
+  font-size: 20px;
+  font-weight: 700;
+  padding-left: 20px;
+  margin-top: 40px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: $color-main;
+  }
+}
+
+.modal-contact__text {
+  margin-top: 16px;
+  line-height: (24 / 16);
+  padding-left: 20px;
+}
+
+.modal-contact__button {
+  margin-top: 60px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    display: inline-block;
+    width: 176px;
+    padding: 14px;
+    text-align: center;
+    color: #fff;
+    background: $color-main;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(#000000, 0.16);
+  }
+}
+
+.modal-contact__icon {
+  position: absolute;
+  width: 40px;//imgに指定しているのでこれを消してもいい。
+  height: 40px;//imgに指定しているのでこれを消してもいい。
+  right: -20px;
+  top: -20px;
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 40px;
+  }
+}
+
+.modal-contact__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(#000000, 0.3);
+  z-index: 500;
+  display: none;
+
+  @include mq('sp') {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
