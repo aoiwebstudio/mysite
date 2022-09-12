@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
 
-$color-main: #3F51B5;
+$color-main: #fff;
 $color-accent: #E81919;
 $color-text: #333333;
 
@@ -123,5 +123,52 @@ a {
   @include mq('sp') {
     padding-top: 50px;
     padding-bottom: 60px;
+  }
+}
+
+/*====================================================================================
+#	header
+===================================================================================== */
+.header {
+  background: $color-main;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 3px 3px rgba(#000000, 0.16);
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.header__logo {
+  width: 205px;
+
+  img {
+    display: block;
+  }
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-family: $font-en;
+}
+
+li {
+  &:not(:first-child) {
+    margin-left: 40px;
+  }
+
+  a {
+    color: $color-text;
+    text-decoration: none;
+    position: relative;
   }
 }
