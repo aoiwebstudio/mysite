@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+$color-main: #3F51B5;
+$color-accent: #E81919;
+$color-text: #333333;
+
+$font-en: 'Lato', sans-serif;
+$font-ja: 'Noto Sans JP', sans-serif;
+
+// レイアウト幅
+$layout-width-inner: 1200px;
+
+// ブレークポイント
+$breakpoints: (
+  'sp': "(max-width: 767px)", 
+  'tab': "(min-width: 768px) and (max-width: #{$layout-width-inner - 1px})", 
+  'pc': "(min-width: #{$layout-width-inner})",
+);
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $font-ja;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #fff;
+  color: $color-text;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.inner {
+  width: $layout-width-inner;
+  max-width: 100%;
+  margin: 0 auto;
+
+  // @include mq('tab') {
+  //   padding-left: 24px;
+  //   padding-right: 24px;
+  // }
+
+  @include mq('sp') {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.section__title {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 28px; //下のバーの高さ分
+  position: relative;
+  font-family: $font-en;
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    width: 60px;
+    height: 4px;
+    background: $color-main;
+
+    @include mq('sp') {
+      width: 42px;
+      height: 3px;
+    }
+  }
+
+  @include mq('sp') {
+    font-size: 26px;
+    padding-bottom: 18px;
+  }
+}
+
+.section {
+  padding: 100px 0 120px;
+
+  @include mq('sp') {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+}
