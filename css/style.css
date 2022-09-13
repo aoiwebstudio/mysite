@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Qwitcher+Grypen:wght@700&display=swap");
 *,
 *::before,
 *::after {
@@ -277,4 +279,58 @@ li a:hover {
   width: 8px;
   height: 11px;
   background: url(../img/arrow-b@2x.png) no-repeat center center/contain;
+}
+
+.drawerBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.16);
+  z-index: 298;
+  display: none;
+}
+
+.drawerBackground.is-active {
+  display: block;
+}
+
+/*====================================================================================
+#	mainVisual
+===================================================================================== */
+.mainVisual {
+  height: 600px;
+  width: 100%;
+  background: url(../img/mainimg.jpg) no-repeat center center/cover;
+  position: relative;
+  margin-top: 80px;
+}
+
+@media (max-width: 767px) {
+  .mainVisual {
+    margin-top: 60px;
+    height: 420px;
+  }
+}
+
+.mainVisual__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.mainVisual__title {
+  color: #686868;
+  font-family: 'Qwitcher Grypen', cursive;
+  font-size: 200px;
+  line-height: 1;
+}
+
+.mainVisual__lead {
+  color: #686868;
+  font-size: 24px;
 }
