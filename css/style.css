@@ -19,7 +19,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   background: #fff;
-  color: #333333;
+  color: #686868;
 }
 
 img {
@@ -156,7 +156,7 @@ li:not(:first-child) {
 }
 
 li a {
-  color: #333333;
+  color: #686868;
   text-decoration: none;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
@@ -169,7 +169,7 @@ li a:hover {
 /*====================================================================================
 #	drawer
 ===================================================================================== */
-.drawerIcon {
+.drawer-icon {
   position: fixed;
   top: 20px;
   right: 16px;
@@ -178,42 +178,42 @@ li a:hover {
 }
 
 @media (max-width: 767px) {
-  .drawerIcon {
+  .drawer-icon {
     display: block;
   }
 }
 
-.drawerIcon.is-active {
+.drawer-icon.is-active {
   -webkit-transform: translate(-200px);
           transform: translate(-200px);
 }
 
-.drawerIcon .drawerIcon__bar1 {
+.drawer-icon .drawer-icon__bar1 {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   top: 8px;
 }
 
-.drawerIcon .drawerIcon__bar2 {
+.drawer-icon .drawer-icon__bar2 {
   display: none;
 }
 
-.drawerIcon .drawerIcon__bar3 {
+.drawer-icon .drawer-icon__bar3 {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   top: 8px;
 }
 
-.drawerIcon__bars {
+.drawer-icon__bars {
   width: 22px;
   height: 20px;
   display: block;
   position: relative;
 }
 
-.drawerIcon__bar1,
-.drawerIcon__bar2,
-.drawerIcon__bar3 {
+.drawer-icon__bar1,
+.drawer-icon__bar2,
+.drawer-icon__bar3 {
   position: absolute;
   width: 22px;
   height: 4px;
@@ -222,19 +222,19 @@ li a:hover {
   left: 0;
 }
 
-.drawerIcon__bar1 {
+.drawer-icon__bar1 {
   top: 0;
 }
 
-.drawerIcon__bar2 {
+.drawer-icon__bar2 {
   top: 8px;
 }
 
-.drawerIcon__bar3 {
+.drawer-icon__bar3 {
   top: 16px;
 }
 
-.drawerContent {
+.drawer-content {
   width: 200px;
   height: 100%;
   position: fixed;
@@ -252,16 +252,16 @@ li a:hover {
   transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
 }
 
-.drawerContent.is-active {
+.drawer-content.is-active {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 
-.drawerContent__item {
+.drawer-content__item {
   border-bottom: 1px dotted #707070;
 }
 
-.drawerContent__item a {
+.drawer-content__item a {
   display: block;
   color: #707070;
   text-decoration: none;
@@ -269,7 +269,7 @@ li a:hover {
   position: relative;
 }
 
-.drawerContent__item a::after {
+.drawer-content__item a::after {
   position: absolute;
   content: "";
   right: 20px;
@@ -281,7 +281,7 @@ li a:hover {
   background: url(../img/arrow-b@2x.png) no-repeat center center/contain;
 }
 
-.drawerBackground {
+.drawer-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -292,14 +292,14 @@ li a:hover {
   display: none;
 }
 
-.drawerBackground.is-active {
+.drawer-background.is-active {
   display: block;
 }
 
 /*====================================================================================
-#	mainVisual
+#	main-visual
 ===================================================================================== */
-.mainVisual {
+.main-visual {
   height: 600px;
   width: 100%;
   background: url(../img/mainimg.jpg) no-repeat center center/cover;
@@ -308,13 +308,13 @@ li a:hover {
 }
 
 @media (max-width: 767px) {
-  .mainVisual {
+  .main-visual {
     margin-top: 60px;
     height: 420px;
   }
 }
 
-.mainVisual__content {
+.main-visual__content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -323,14 +323,46 @@ li a:hover {
   text-align: center;
 }
 
-.mainVisual__title {
+.main-visual__title {
   color: #686868;
   font-family: 'Qwitcher Grypen', cursive;
   font-size: 200px;
   line-height: 1;
 }
 
-.mainVisual__lead {
+.main-visual__lead {
   color: #686868;
   font-size: 24px;
+}
+
+.main-visual__lead .main-visual__lead--font {
+  font-size: 30px;
+}
+
+.main-visual__btn {
+  margin-top: 30px;
+}
+
+.main-visual__btn-link {
+  display: inline-block;
+  width: 280px;
+  max-width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  background-color: #686868;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 12px;
+  text-decoration: none;
+  -webkit-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+}
+
+.main-visual__btn-link:hover {
+  background: #b4b4b4;
+  color: #686868;
 }
