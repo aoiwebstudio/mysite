@@ -193,14 +193,14 @@ li {
       background: transparent;
       transform-origin: left;
       transform: scale(0, 1);
-      transition: all 0.3s ease 0s;
+      transition: all .5s ease 0s;
     }
 
     &:hover,
     &.is-active {
       &::after {
         background: $color-text;
-        transform: scale(1);
+        transform: scale(1, 1);
       }
     }    
   }
@@ -384,10 +384,48 @@ li {
   box-shadow: 0 3px 6px rgba(#000000, 0.16);
   border-radius: 12px;
   text-decoration: none;
-  transition: all 0.7s ease 0s;
+  transition: all 0.3s ease 0s;
 
   &:hover {
     background: #b4b4b4;
     color: $color-btn;
   }
+}
+
+/*====================================================================================
+#	profile
+===================================================================================== */
+.profile {
+
+}
+
+.profile__inner {
+
+}
+
+.profile__head {
+
+}
+
+.profile__content {
+
+}
+
+.profile__img {
+
+  img {
+
+  }
+}
+
+.profile__text {
+
+}
+
+.profile__name {
+
+}
+
+.profile__desc {
+  
 }

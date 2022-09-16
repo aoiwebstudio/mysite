@@ -180,14 +180,14 @@ li a::after {
           transform-origin: left;
   -webkit-transform: scale(0, 1);
           transform: scale(0, 1);
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: all .5s ease 0s;
+  transition: all .5s ease 0s;
 }
 
 li a:hover::after, li a.is-active::after {
   background: #686868;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
 }
 
 /*====================================================================================
@@ -382,11 +382,15 @@ li a:hover::after, li a.is-active::after {
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   border-radius: 12px;
   text-decoration: none;
-  -webkit-transition: all 0.7s ease 0s;
-  transition: all 0.7s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .main-visual__btn-link:hover {
   background: #b4b4b4;
   color: #686868;
 }
+
+/*====================================================================================
+#	profile
+===================================================================================== */
