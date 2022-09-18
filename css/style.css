@@ -79,7 +79,7 @@ a {
   bottom: 0px;
   width: 60px;
   height: 4px;
-  background: #fff;
+  background: #ff656a;
 }
 
 @media (max-width: 767px) {
@@ -394,3 +394,35 @@ li a:hover::after, li a.is-active::after {
 /*====================================================================================
 #	profile
 ===================================================================================== */
+.profile__content {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile__img {
+  width: 50%;
+  text-align: center;
+}
+
+.profile__img img {
+  width: 500px;
+  max-width: 100%;
+}
+
+.profile__text {
+  margin-left: 50px;
+  width: 50%;
+}
+
+.profile__name {
+  margin-top: 30px;
+  font-size: 36px;
+}
+
+.profile__desc {
+  margin-top: 24px;
+  font-size: 24px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -7,6 +7,7 @@ $color-main: #fff;
 $color-accent: #E81919;
 $color-text: #686868;
 $color-btn: #686868;
+$color-title: #ff656a;
 
 $font-en: 'Lato', sans-serif;
 $font-ja: 'Noto Sans JP', sans-serif;
@@ -108,7 +109,7 @@ a {
     bottom: 0px;
     width: 60px;
     height: 4px;
-    background: $color-main;
+    background: $color-title;
 
     @include mq('sp') {
       width: 42px;
@@ -408,24 +409,31 @@ li {
 }
 
 .profile__content {
-
+  margin-top: 50px;
+  display: flex;
 }
 
 .profile__img {
-
+  width: 50%;
+  text-align: center;
+  
   img {
-
+    width: 500px;
+    max-width: 100%;
   }
 }
 
 .profile__text {
-
+  margin-left: 50px;
+  width: 50%;
 }
 
 .profile__name {
-
+  margin-top: 30px;
+  font-size: 36px;
 }
 
 .profile__desc {
-  
+  margin-top: 24px;
+  font-size: 24px;
 }
