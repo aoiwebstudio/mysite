@@ -429,4 +429,33 @@ li a:hover::after, li a.is-active::after {
 /*=================================================================================
 # service
 ==================================================================================*/
-/*# sourceMappingURL=style.css.map */
+.service__clearfix {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.service__box {
+  width: 25%;
+}
+
+.service__img {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  border: solid 3px #eee;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.service__img img {
+  width: 50px;
+}

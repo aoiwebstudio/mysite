@@ -441,3 +441,57 @@ li {
 /*=================================================================================
 # service
 ==================================================================================*/
+.service {
+
+}
+
+.service__inner {
+
+}
+
+.service__head {
+
+}
+
+.service__area {
+
+}
+
+.service__copy {
+
+}
+
+.service__clearfix {
+  display: flex;
+}
+
+.service__box {
+  width: 25%;
+}
+
+.service__img {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  border: solid 3px #eee;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 50px;
+  }
+}
+
+.service__content {
+
+}
+
+.service__name {
+
+}
+
+.service__text {
+
+}
