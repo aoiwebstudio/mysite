@@ -454,7 +454,8 @@ li {
 }
 
 .service__area {
-
+  margin-top: 50px;
+  padding: 0 12px;
 }
 
 .service__copy {
@@ -463,10 +464,24 @@ li {
 
 .service__clearfix {
   display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .service__box {
   width: 25%;
+  border: 2px solid #686868;
+  border-radius: 10px;
+  padding: 30px 15px 50px;
+  transition: transform 0.3s;
+
+  &:not(:first-child) {
+    margin-left: 24px;
+  }
+
+  &:hover {
+    transform: scale(110%);
+  }
 }
 
 .service__img {
@@ -480,18 +495,20 @@ li {
   justify-content: center;
 
   img {
-    width: 50px;
+    width: 100%;
+    padding: 5px;
   }
 }
 
 .service__content {
-
+  width: 100%;
 }
 
 .service__name {
-
+  margin-top: 3px;
+  text-align: center;
 }
 
 .service__text {
-
+  margin: 20px 0 0;
 }
