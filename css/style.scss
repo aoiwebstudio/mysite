@@ -455,17 +455,26 @@ li {
 
 .service__area {
   margin-top: 50px;
-  padding: 0 12px;
+  padding: 50px 45px;
+  border: 10px solid #686868;
+  position: relative;
 }
 
 .service__copy {
-
+  position: absolute;
+  background: #fff;
+  font-size: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -30px;
+  writing-mode: vertical-rl;
+  height: 250px;
+  text-align: center;
 }
 
 .service__clearfix {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
 }
 
 .service__box {
