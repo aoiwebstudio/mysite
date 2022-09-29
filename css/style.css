@@ -426,6 +426,30 @@ li a:hover::after, li a.is-active::after {
   font-size: 24px;
 }
 
+.company__info {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.company__info-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #686868;
+}
+
+.company__dt {
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  font-weight: 700;
+}
+
+.company__dd {
+  margin: 0;
+  padding: 0;
+}
+
 /*=================================================================================
 # service
 ==================================================================================*/
@@ -509,6 +533,7 @@ li a:hover::after, li a.is-active::after {
 .service__name {
   margin-top: 3px;
   text-align: center;
+  font-weight: 500;
 }
 
 .service__text {
