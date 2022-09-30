@@ -426,6 +426,15 @@ li a:hover::after, li a.is-active::after {
   font-size: 24px;
 }
 
+.company__title {
+  margin: 50px auto 30px;
+  width: 100px;
+  text-align: center;
+  letter-spacing: 3px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #686868;
+}
+
 .company__info {
   width: 800px;
   margin: 0 auto;
@@ -436,6 +445,11 @@ li a:hover::after, li a.is-active::after {
   display: -ms-flexbox;
   display: flex;
   border-bottom: 1px solid #686868;
+  padding-bottom: 3px;
+}
+
+.company__info-row:not(:first-child) {
+  margin-top: 15px;
 }
 
 .company__dt {
