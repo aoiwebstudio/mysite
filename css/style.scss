@@ -570,3 +570,56 @@ li {
   margin: 0;
   padding: 0;
 }
+
+/*====================================================================================
+#	performance
+===================================================================================== */
+
+
+
+/*====================================================================================
+#	price
+===================================================================================== */
+.price {
+
+}
+
+.price__inner {
+
+}
+
+.price__head {
+
+}
+
+.price__lead {
+  text-align: center;
+}
+
+.price__content {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+.price__row {
+  display: flex;
+}
+
+.col__text,
+.col__price {
+  width: 50%;
+  height: 200px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.col__text {
+  background-color: #D4B7A9;
+}
+
+.col__price {
+  background-color: #7EACBD;
+}
+
