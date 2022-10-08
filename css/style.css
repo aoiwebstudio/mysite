@@ -426,44 +426,6 @@ li a:hover::after, li a.is-active::after {
   font-size: 24px;
 }
 
-.company__title {
-  margin: 50px auto 30px;
-  width: 100px;
-  text-align: center;
-  letter-spacing: 3px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #686868;
-}
-
-.company__info {
-  width: 800px;
-  margin: 0 auto;
-}
-
-.company__info-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-bottom: 1px solid #686868;
-  padding-bottom: 3px;
-}
-
-.company__info-row:not(:first-child) {
-  margin-top: 15px;
-}
-
-.company__dt {
-  margin: 0;
-  padding: 0;
-  width: 150px;
-  font-weight: 700;
-}
-
-.company__dd {
-  margin: 0;
-  padding: 0;
-}
-
 /*=================================================================================
 # service
 ==================================================================================*/
@@ -552,4 +514,37 @@ li a:hover::after, li a.is-active::after {
 
 .service__text {
   margin: 20px 0 0;
+}
+
+/*====================================================================================
+#	company
+===================================================================================== */
+.company__info {
+  width: 800px;
+  max-width: 100%;
+  margin: 50px auto 0;
+}
+
+.company__info-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #686868;
+  padding-bottom: 3px;
+}
+
+.company__info-row:not(:first-child) {
+  margin-top: 15px;
+}
+
+.company__dt {
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  font-weight: 700;
+}
+
+.company__dd {
+  margin: 0;
+  padding: 0;
 }
