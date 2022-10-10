@@ -287,7 +287,9 @@ li {
   }
 }
 
-.drawer-content__items {}
+.drawer-content__items {
+  
+}
 
 .drawer-content__item {
   border-bottom: 1px dotted #707070;
@@ -597,29 +599,44 @@ li {
 }
 
 .price__content {
-  width: 700px;
+  width: 800px;
   max-width: 100%;
   margin: 0 auto;
-  vertical-align: middle;
 }
 
 .price__row {
+  max-width: 100%;
+  height: 250px;
   display: flex;
+  margin-top: 30px;
+  // justify-content: center;
 }
 
 .col__text,
 .col__price {
   width: 50%;
-  height: 200px;
-  text-align: center;
-  vertical-align: middle;
+  height: 250px;
+  // text-align: center;
+  font-size: 1.3rem;
+
+  
+  p {
+    margin: 0;
+    
+  }
 }
 
+
 .col__text {
-  background-color: #D4B7A9;
+  background-color: #f7f7f7;
 }
 
 .col__price {
-  background-color: #7EACBD;
+  color: #fff;
+  background-color: #c0c0c0;
+
 }
 
+.price-tag {
+  font-size: 2.5rem;
+}
