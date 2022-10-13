@@ -599,42 +599,54 @@ li {
 }
 
 .price__content {
-  width: 800px;
-  max-width: 100%;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .price__row {
-  max-width: 100%;
-  height: 250px;
+  // width: inherit;
   display: flex;
   margin-top: 30px;
-  // justify-content: center;
+}
+
+.price__wrap {
+  width: 50%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price__text-bg-color {
+  background-color: #f7f7f7;
+}
+
+.price__price-bg-color {
+  background-color: #0bd;
+  // background-color: #c0c0c0;
 }
 
 .col__text,
 .col__price {
-  width: 50%;
-  height: 250px;
-  // text-align: center;
+  // width: 50%;
+  // height: 300px;
   font-size: 1.3rem;
+  text-align: center;
 
   
-  p {
-    margin: 0;
-    
-  }
+  // p {
+  //   margin: 0;
+  //   padding: 0;
+  // }
 }
 
 
 .col__text {
-  background-color: #f7f7f7;
+  
 }
 
 .col__price {
   color: #fff;
-  background-color: #c0c0c0;
-
 }
 
 .price-tag {
