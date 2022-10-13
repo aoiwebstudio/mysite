@@ -557,11 +557,12 @@ li a:hover::after, li a.is-active::after {
 ===================================================================================== */
 .price__lead {
   text-align: center;
+  margin-top: 40px;
 }
 
 .price__content {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 50px auto 0;
 }
 
 .price__row {
@@ -591,6 +592,11 @@ li a:hover::after, li a.is-active::after {
 
 .price__price-bg-color {
   background-color: #0bd;
+}
+
+.head-message {
+  font-size: 3rem;
+  letter-spacing: 20px;
 }
 
 .col__text,
