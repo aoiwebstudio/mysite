@@ -3,11 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Qwitcher+Grypen:wght@700&display=swap');
 
 
-$color-main: #fff;
+$color-main: #3EA1D1B3;
+// $color-main: #0bd;
+$color-sub-main: #fff;
 $color-accent: #E81919;
 $color-text: #686868;
-$color-btn: #686868;
-$color-title: #ff656a;
+$color-btn: #0bd;
+// $color-btn: #686868;
+$color-title: #0bd;
 
 $font-en: 'Lato', sans-serif;
 $font-ja: 'Noto Sans JP', sans-serif;
@@ -97,7 +100,7 @@ a {
   font-size: 48px;
   font-weight: 700;
   text-align: center;
-  padding-bottom: 28px; //下のバーの高さ分
+  padding-bottom: 18px; //下のバーの高さ分
   position: relative;
   font-family: $font-en;
 
@@ -107,8 +110,8 @@ a {
     left: 50%;
     transform: translateX(-50%);
     bottom: 0px;
-    width: 60px;
-    height: 4px;
+    width: 100px;
+    height: 1px;
     background: $color-title;
 
     @include mq('sp') {
@@ -136,11 +139,11 @@ a {
 #	header
 ===================================================================================== */
 .header {
-  background: $color-main;
+  background: rgba($color-sub-main, $alpha: 0.6);
   height: 80px;
   position: fixed;
   width: 100%;
-  box-shadow: 0 3px 3px rgba(#000000, 0.16);
+  // box-shadow: 0 3px 3px rgba(#000000, 0.16);
   z-index: 100;
   top: 0;
   left: 0;
@@ -335,7 +338,7 @@ li {
 .main-visual {
   height: 600px;
   width: 100%;
-  background: url(../img/mainimg.jpg) no-repeat center center / cover;
+  background: url(../img/水面.png) no-repeat center center / cover;
   position: relative;
   margin-top: 80px;
 
@@ -385,12 +388,12 @@ li {
   color: #fff;
   background-color: $color-btn;
   box-shadow: 0 3px 6px rgba(#000000, 0.16);
-  border-radius: 12px;
+  border-radius: 4px;
   text-decoration: none;
   transition: all 0.3s ease 0s;
 
   &:hover {
-    background: #b4b4b4;
+    background: $color-sub-main;
     color: $color-btn;
   }
 }
@@ -623,7 +626,9 @@ li {
 }
 
 .price__price-bg-color {
-  background-color: #0bd;
+  background-color: $color-main;
+  // background-color: #8BC1C9;
+  // background-color: #0bd;
   // background-color: #c0c0c0;
 }
 
@@ -733,7 +738,7 @@ li {
   color: #fff;
   font-size: 18px;
   font-weight: 700;
-  background: #3EA1D1B3;
+  background: $color-main;
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -754,7 +759,7 @@ li {
       right: -8px;
       border-style: solid;
       border-width: 20px 0 20px 8px;
-      border-color: transparent transparent transparent #3EA1D1B3;
+      border-color: transparent transparent transparent $color-main;
     }
   }
 
@@ -767,7 +772,7 @@ li {
       right: -8px;
       border-style: solid;
       border-width: 20px 0 20px 8px;
-      border-color: transparent transparent transparent #3EA1D1B3;
+      border-color: transparent transparent transparent $color-main;
     }
   }
 
@@ -923,7 +928,7 @@ li {
   display: inline-block;
   height: 22px;
   width: 22px;
-  border: 1px solid #0bd;
+  border: 1px solid $color-main;
   background: #fff;
   top: 0;
   left: 0;
@@ -941,7 +946,7 @@ li {
   [type="submit"] {
     display: inline-block;
     background: #fff;
-    border: 1px solid #0bd;
+    border: 1px solid $color-main;
     border-radius: 0;
     color: #0bd;
     width: 137px;
@@ -953,7 +958,7 @@ li {
     font-weight: 700;
 
     &.-active {
-      background: #0bd;
+      background: $color-main;
       color: #fff;
     }
   }
