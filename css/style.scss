@@ -338,7 +338,7 @@ li {
 .main-visual {
   height: 600px;
   width: 100%;
-  background: url(../img/水面.png) no-repeat center center / cover;
+  background: url(../img/water.png) no-repeat center center / cover;
   position: relative;
   margin-top: 80px;
 
@@ -674,12 +674,9 @@ li {
 #	contact
 ===================================================================================== */
 .contact {
-  padding: 72px 0 85px;
-  margin-top: 225px;
 
   @include mq('sp') {
-    padding: 57px 0;
-    margin-top: 96px;
+  
   }
 }
 
@@ -688,7 +685,7 @@ li {
 }
 
 .contact__head {
-  margin-top: 0;
+
 }
 
 .contact-form {
@@ -828,6 +825,20 @@ li {
     width: 100%;
   }
 
+  [type="tel"] {
+    box-shadow: 5px 6px 15px rgba(#000, 0.16);
+    border: none;
+    background: #fff;
+    height: 40px;
+    padding: 10px 16px;
+    appearance: none;
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 18px;
+    width: 100%;
+  }
+
   position: relative;
 
   [type="radio"] {
@@ -837,6 +848,7 @@ li {
     opacity: 0;
 
     &:checked + .contact-form__parts {
+      background: $color-main;
       color: #fff;
       border-radius: 1px;
     }
@@ -849,6 +861,7 @@ li {
   .contact-form__parts {
     display: block;
     background: #fff;
+    color: $color-main;
     height: 38px;
     line-height: 38px;
     width: 80px;
