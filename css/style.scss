@@ -537,7 +537,9 @@ li {
 ===================================================================================== */
 
 .company {
-
+  background: url(../img/typewriter.png) no-repeat center center / cover ;
+  background-attachment: fixed;
+  color: #fff;
 }
 
 .company__inner {
@@ -674,6 +676,8 @@ li {
 #	contact
 ===================================================================================== */
 .contact {
+  background: url(../img/contact-img.png) no-repeat center center / cover;
+  background-attachment: fixed;
 
   @include mq('sp') {
   

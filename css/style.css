@@ -517,6 +517,12 @@ li a:hover::after, li a.is-active::after {
 /*====================================================================================
 #	company
 ===================================================================================== */
+.company {
+  background: url(../img/typewriter.png) no-repeat center center/cover;
+  background-attachment: fixed;
+  color: #fff;
+}
+
 .company__info {
   width: 800px;
   max-width: 100%;
@@ -619,6 +625,11 @@ li a:hover::after, li a.is-active::after {
 /*====================================================================================
 #	contact
 ===================================================================================== */
+.contact {
+  background: url(../img/contact-img.png) no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
 .contact-form {
   margin-top: 64px;
 }
