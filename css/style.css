@@ -324,7 +324,7 @@ li a:hover::after, li a.is-active::after {
 .main-visual {
   height: 600px;
   width: 100%;
-  background: url(../img/water.png) no-repeat center center/cover;
+  background: url(../img/waves.jpg) no-repeat center center/cover;
   position: relative;
   margin-top: 80px;
 }
@@ -410,16 +410,16 @@ li a:hover::after, li a.is-active::after {
 }
 
 .profile__text {
-  margin-left: 50px;
+  margin-left: 30px;
   width: 50%;
 }
 
 .profile__name {
-  margin-top: 30px;
   font-size: 36px;
 }
 
 .profile__desc {
+  text-align: justify;
   margin-top: 24px;
   font-size: 24px;
 }
@@ -518,7 +518,7 @@ li a:hover::after, li a.is-active::after {
 #	company
 ===================================================================================== */
 .company {
-  background: url(../img/typewriter.png) no-repeat center center/cover;
+  background: url(../img/sea.jpg) no-repeat center center/cover;
   background-attachment: fixed;
   color: #fff;
 }
@@ -626,7 +626,7 @@ li a:hover::after, li a.is-active::after {
 #	contact
 ===================================================================================== */
 .contact {
-  background: url(../img/contact-img.png) no-repeat center center/cover;
+  background: url(../img/sand.jpg) no-repeat center center/cover;
   background-attachment: fixed;
 }
 
@@ -967,3 +967,4 @@ li a:hover::after, li a.is-active::after {
 .contact__message.-error {
   color: #f00;
 }
+/*# sourceMappingURL=style.css.map */
