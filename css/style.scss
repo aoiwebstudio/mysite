@@ -584,6 +584,34 @@ li {
 #	performance
 ===================================================================================== */
 
+.performance {
+
+}
+
+.performance__inner {
+
+}
+
+.performance__head {
+
+}
+
+.performance__content {
+  margin-top: 100px;
+}
+
+.performance__imgs {
+}
+
+.performance__img {
+  // transform: scale(0, 1);
+
+  a {
+    &:hover {
+      transform: scale(1, 1);
+    }
+  }
+}
 
 
 /*====================================================================================
@@ -926,6 +954,8 @@ li {
       width: 10px;
       border-top: 0;
       border-left: 0;
+      border-right: 4px solid $color-main;
+      border-bottom: 4px solid $color-main;
       background: transparent;
       transform: rotate(45deg);
       top: -5px;
