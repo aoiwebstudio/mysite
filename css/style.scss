@@ -170,7 +170,7 @@ a {
   font-family: $font-en;
 }
 
-li {
+.header__nav-item {
 
   &:not(:first-child) {
     margin-left: 5px;
@@ -181,33 +181,34 @@ li {
   }
 
 
-  a {
-    color: $color-text;
-    text-decoration: none;
-    transition: all 0.4s ease 0s;
-    position: relative;
+}
 
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: transparent;
-      transform-origin: left;
-      transform: scale(0, 1);
-      transition: all .5s ease 0s;
-    }
+.header__nav-link {
+  color: $color-text;
+  text-decoration: none;
+  transition: all 0.4s ease 0s;
+  position: relative;
 
-    &:hover,
-    &.is-active {
-      &::after {
-        background: $color-text;
-        transform: scale(1, 1);
-      }
-    }    
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: transparent;
+    transform-origin: left;
+    transform: scale(0, 1);
+    transition: all .5s ease 0s;
   }
+
+  &:hover,
+  &.is-active {
+    &::after {
+      background: $color-text;
+      transform: scale(1, 1);
+    }
+  }    
 }
 
 /*====================================================================================
@@ -470,7 +471,7 @@ li {
   position: relative;
 }
 
-.service__copy {
+.service__sub-head {
   position: absolute;
   background: #fff;
   font-size: 30px;
@@ -581,38 +582,103 @@ li {
 }
 
 /*====================================================================================
-#	performance
+#	work
 ===================================================================================== */
 
-.performance {
+.work {
+  // background-color: #f5f5f5;
+}
+
+.work__head {
 
 }
 
-.performance__inner {
-
+.work__inner {
+  padding-left: 80px;
+  position: relative;
 }
 
-.performance__head {
-
+.work__sub-head {
+  position: absolute;
+  width: 200px;
+  text-align: center;
+  background: #fff;
+  letter-spacing: 1px;
+  font-size: 35px;
+  top: -25px;
+  left: 130px;
+  z-index: 2;
 }
 
-.performance__content {
+.work__content {
   margin-top: 100px;
+  // border: 10px solid #686868;
+  border: solid #686868 ;
+  border-width: 10px 0px 10px 10px;
 }
 
-.performance__imgs {
+.work__items {
+  padding: 50px 0 0 30px;
 }
 
-.performance__img {
-  // transform: scale(0, 1);
+.work__item {
+  border: 2px solid $color-text;
+  padding: 2px;
+}
 
-  a {
-    &:hover {
-      transform: scale(1, 1);
-    }
+.work__link {
+  text-decoration: none;
+  transition: opacity .2s;
+
+  &:hover {
+    opacity: 0.7;
   }
 }
 
+.work__img {
+
+}
+
+//swiper---------------
+
+.swiper-pagination {
+  text-align: left;
+  position: static;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+
+  @include mq('sp') {
+    text-align: center;
+    margin-top: 24px;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: $color-text;
+  opacity: 1;
+  margin: 0 10px !important;
+  position: relative;
+
+  &.swiper-pagination-bullet-active:after {
+    position: absolute;
+    content: '';
+    border: 1px solid $color-text;
+    border-radius: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
 
 /*====================================================================================
 #	price
@@ -654,7 +720,7 @@ li {
 }
 
 .price__text-bg-color {
-  background-color: #f7f7f7;
+  background-color: #f5f5f5;
 }
 
 .price__price-bg-color {

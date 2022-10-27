@@ -1,19 +1,26 @@
+//swiper----------------------------------------
 const swiper = new Swiper('.swiper', {
-  // Optional parameters
+  // slidesPerView: 2, //表示する数
+  spaceBetween: 24, //隣り合わせのマージン
+  width: 274,
   loop: true,
+  loopedSlides: 6,
 
-  // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
     clickable: true,
   },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  breakpoints: {
+    //768px以上の場合
+    768: {
+      // slidesPerView: 3,
+      spaceBetween: 40,
+      width: 400,
+    }
+  }
 });
+//swiper-end-------------------------------
+
 
 //wow.js
 new WOW().init();

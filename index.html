@@ -21,15 +21,15 @@
         <h1 class="header__logo"><a href="#"><img src="./img/logo黒.png" alt=""></a></h1>
         <ul class="header__nav">
           <!-- <li><a href="#profile">プロフィール</a></li> -->
-          <li><a href="#service">サービス</a></li>
-          <li><a href="#company">事業概要</a></li>
-          <li><a href="#performance">制作実績</a></li>
-          <li><a href="#price">価格表</a></li>
-          <li><a href="#contact">お問い合わせ</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#service">サービス</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#company">事業概要</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#work">制作実績</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#price">価格表</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#contact">お問い合わせ</a></li>
         </ul>
       </div>
     </header>
-    
+
     <!-- drawer -->
     <div class="drawer-icon">
       <div class="drawer-icon__bars">
@@ -44,7 +44,7 @@
         <!-- <div class="drawer-content__item"><a href="#profile">プロフィール</a></div> -->
         <div class="drawer-content__item"><a href="#service">サービス</a></div>
         <div class="drawer-content__item"><a href="#about">事業概要</a></div>
-        <div class="drawer-content__item"><a href="#performance">制作実績</a></div>
+        <div class="drawer-content__item"><a href="#work">制作実績</a></div>
         <div class="drawer-content__item"><a href="#price">価格表</a></div>
         <div class="drawer-content__item"><a href="#contact">お問い合わせ</a></div>
       </div>
@@ -71,7 +71,9 @@
           <div class="profile__img"><img src="./img/profile.JPG" alt=""></div>
           <div class="profile__text">
             <h3 class="profile__name">A.O.I</h3>
-            <div class="profile__desc">「この前行ったあのお店よかったね、また行こうね。」といって次に行ったら、そこはもう違うお店だった。<br>世の中には良いお店がたくさんあるのに無くなってしまう、そんな現実を変えたい！<br>そのような思いから自分が少しでも世の中の良いお店の役に立ちたいと思い、この事業を行うことを決めました。</div>
+            <div class="profile__desc">
+              「この前行ったあのお店よかったね、また行こうね。」といって次に行ったら、そこはもう違うお店だった。<br>世の中には良いお店がたくさんあるのに無くなってしまう、そんな現実を変えたい！<br>そのような思いから自分が少しでも世の中の良いお店の役に立ちたいと思い、この事業を行うことを決めました。
+            </div>
           </div>
         </div>
       </div>
@@ -82,7 +84,7 @@
       <div class="service__inner inner">
         <h2 class="service__head section__title">Service</h2>
         <div class="service__area">
-          <h3 class="service__copy">私にできること</h3>
+          <h3 class="service__sub-head">私にできること</h3>
           <div class="service__clearfix">
             <div class="service__box">
               <div class="service__img"><img src="./img/pc.svg" alt="pc"></div>
@@ -121,55 +123,76 @@
     <section id="company" class="company section">
       <div class="company__inner inner">
         <h2 class="company__head section__title">事業概要</h2>
-          <dl class="company__info">
-            <div class="company__info-row">
-              <dt class="company__dt">屋号</dt>
-              <dd class="company__dd">Aoi.Web.Studio</dd>
-            </div>
-            <div class="company__info-row">
-              <dt class="company__dt">WebSite</dt>
-              <dd class="company__dd">https://aoi.web.studio.com</dd>
-            </div>
-            <div class="company__info-row">
-              <dt class="company__dt">業種</dt>
-              <dd class="company__dd">ホームページ制作・Webマーケティング</dd>
-            </div>
-            <div class="company__info-row">
-              <dt class="company__dt">住所</dt>
-              <dd class="company__dd">愛知県額田郡幸田町（詳細は自宅兼のため省略）</dd>
-            </div>
-            <div class="company__info-row">
-              <dt class="company__dt">代表者</dt>
-              <dd class="company__dd">榊原 亜緒依</dd>
-            </div>
-            <div class="company__info-row">
-              <dt class="company__dt">email</dt>
-              <dd class="company__dd">aoiwebstudio@gmil.com</dd>
-            </div>
-            <div class="company__info-row">
-              <dt class="company__dt">設立</dt>
-              <dd class="company__dd">2022年6月6日</dd>
-            </div>
-            <div class="company__info-row">
-              <dt class="company__dt">事業形態</dt>
-              <dd class="company__dd">個人事業主</dd>
-            </div>
-            <div class="company__info-row">
-              <dt class="company__dt">取引銀行</dt>
-              <dd class="company__dd">PayPay銀行 ビジネス営業部</dd>
-            </div>
-          </dl>
+        <dl class="company__info">
+          <div class="company__info-row">
+            <dt class="company__dt">屋号</dt>
+            <dd class="company__dd">Aoi.Web.Studio</dd>
+          </div>
+          <div class="company__info-row">
+            <dt class="company__dt">WebSite</dt>
+            <dd class="company__dd">https://aoi.web.studio.com</dd>
+          </div>
+          <div class="company__info-row">
+            <dt class="company__dt">業種</dt>
+            <dd class="company__dd">ホームページ制作・Webマーケティング</dd>
+          </div>
+          <div class="company__info-row">
+            <dt class="company__dt">住所</dt>
+            <dd class="company__dd">愛知県額田郡幸田町（詳細は自宅兼のため省略）</dd>
+          </div>
+          <div class="company__info-row">
+            <dt class="company__dt">代表者</dt>
+            <dd class="company__dd">榊原 亜緒依</dd>
+          </div>
+          <div class="company__info-row">
+            <dt class="company__dt">email</dt>
+            <dd class="company__dd">aoiwebstudio@gmil.com</dd>
+          </div>
+          <div class="company__info-row">
+            <dt class="company__dt">設立</dt>
+            <dd class="company__dd">2022年6月6日</dd>
+          </div>
+          <div class="company__info-row">
+            <dt class="company__dt">事業形態</dt>
+            <dd class="company__dd">個人事業主</dd>
+          </div>
+          <div class="company__info-row">
+            <dt class="company__dt">取引銀行</dt>
+            <dd class="company__dd">PayPay銀行 ビジネス営業部</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
-    <!-- performance -->
-    <section id="performance" class="performance section">
-      <div class="performance__inner inner">
-        <h2 class="performance__head section__title">制作実績</h2>
-        <div class="performance__content">
-          <ul class="performance__imgs">
-            <li class="performance__img"><a href="#"><img src="./img/sugiyama-farm.png" alt="sugimaya-farm"></a></li>
+    <!-- work -->
+    <section id="work" class="work section">
+      <h2 class="work__head section__title inner">制作実績</h2>
+      <div class="work__inner">
+        <h3 class="work__sub-head">WORKS</h3>
+        <div class="work__content swiper mySwiper">
+          <ul class="work__items swiper-wrapper">
+            <li class="work__item swiper-slide">
+              <a href="#" class="work__link">
+                <div class="work__img"><img src="./img/sugiyama-farm.png" alt=""></div>
+              </a>
+            </li>
+            <li class="work__item swiper-slide">
+              <a href="#" class="work__link">
+                <div class="work__img"><img src="./img/sugiyama-farm.png" alt=""></div>
+              </a>
+            </li>
+            <li class="work__item swiper-slide">
+              <a href="#" class="work__link">
+                <div class="work__img"><img src="./img/sugiyama-farm.png" alt=""></div>
+              </a>
+            </li>
+            <li class="work__item swiper-slide">
+              <a href="#" class="work__link">
+                <div class="work__img"><img src="./img/sugiyama-farm.png" alt=""></div>
+              </a>
+            </li>
           </ul>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
@@ -178,7 +201,7 @@
       <div class="price__inner inner">
         <h2 class="price__head section__title">価格表</h2>
         <p class="price__lead">ホームページは制作して終わりではなく、制作してからが本当のお付き合いです。<br>
-        二人三脚で歩んでいきましょう！</p>
+          二人三脚で歩んでいきましょう！</p>
         <div class="price__content">
           <div class="price__row">
             <div class="price__wrap price__text-bg-color">
@@ -249,28 +272,34 @@
           <div class="contact-form__required"><span class="contact-form__item">＊</span>は入力必須項目です</div>
           <dl class="contact-form__dl">
             <div class="contact-form__row">
-              <dt class="contact-form__label"><label for="your-name">お名前<span class="contact-form__item">＊</span></label></dt>
+              <dt class="contact-form__label"><label for="your-name">お名前<span
+                    class="contact-form__item">＊</span></label></dt>
               <dd class="contact-form__input"><input type="text" name="entry.557825891" id="your-name" required></dd>
             </div>
             <div class="contact-form__row">
-              <dt class="contact-form__label"><label for="your-email">メールアドレス<span class="contact-form__item">＊</span></label></dt>
+              <dt class="contact-form__label"><label for="your-email">メールアドレス<span
+                    class="contact-form__item">＊</span></label></dt>
               <dd class="contact-form__input"><input type="email" name="emailAddress" id="your-email" required></dd>
             </div>
             <div class="contact-form__row">
-              <dt class="contact-form__label"><label for="your-tel">電話番号<span class="contact-form__item">＊</span></label></dt>
+              <dt class="contact-form__label"><label for="your-tel">電話番号<span
+                    class="contact-form__item">＊</span></label></dt>
               <dd class="contact-form__input"><input type="tel" name="telNumber" id="your-tel" required></dd>
             </div>
             <div class="contact-form__row">
               <dt class="contact-form__label">法人/個人の選択<span class="contact-form__item">＊</span></dt>
               <dd class="contact-form__input">
                 <div class="contact-form__radio-wrap">
-                  <label><input type="radio" name="entry.54629690" value="法人" required checked><span class="contact-form__parts">法人</span></label>
-                  <label><input type="radio" name="entry.54629690" value="個人" required><span class="contact-form__parts">個人</span></label>
+                  <label><input type="radio" name="entry.54629690" value="法人" required checked><span
+                      class="contact-form__parts">法人</span></label>
+                  <label><input type="radio" name="entry.54629690" value="個人" required><span
+                      class="contact-form__parts">個人</span></label>
                 </div>
               </dd>
             </div>
             <div class="contact-form__row">
-              <dt class="contact-form__label"><label for="your-mesaage">お問い合わせ内容<span class="contact-form__item">＊</span></label></dt>
+              <dt class="contact-form__label"><label for="your-mesaage">お問い合わせ内容<span
+                    class="contact-form__item">＊</span></label></dt>
               <dd class="contact-form__input"><textarea name="entry.1888256493" id="your-mesaage"></textarea></dd>
             </div>
           </dl>
@@ -293,8 +322,14 @@
         </div>
       </div>
     </section>
-  
 
+    <!-- footer -->
+    <footer>
+      
+    </footer>
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 
