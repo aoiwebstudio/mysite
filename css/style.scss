@@ -11,6 +11,7 @@ $color-text: #686868;
 $color-btn: #0bd;
 // $color-btn: #686868;
 $color-title: #0bd;
+$color-back:#F4F4F4;
 
 $font-en: 'Lato', sans-serif;
 $font-ja: 'Noto Sans JP', sans-serif;
@@ -139,7 +140,8 @@ a {
 #	header
 ===================================================================================== */
 .header {
-  background: rgba($color-sub-main, $alpha: 0.6);
+  background: rgba($color-back, $alpha: 0.6);
+  // background: rgba($color-sub-main, $alpha: 0.6);
   height: 80px;
   position: fixed;
   width: 100%;
@@ -453,7 +455,7 @@ a {
 # service
 ==================================================================================*/
 .service {
-
+  background-color: $color-back;
 }
 
 .service__inner {
@@ -473,7 +475,7 @@ a {
 
 .service__sub-head {
   position: absolute;
-  background: #fff;
+  background: $color-back;
   font-size: 30px;
   top: 50%;
   transform: translateY(-50%);
@@ -586,7 +588,7 @@ a {
 ===================================================================================== */
 
 .work {
-  // background-color: #f5f5f5;
+  background-color: $color-back;
 }
 
 .work__head {
@@ -602,7 +604,7 @@ a {
   position: absolute;
   width: 200px;
   text-align: center;
-  background: #fff;
+  background: $color-back;
   letter-spacing: 1px;
   font-size: 35px;
   top: -25px;
@@ -1087,4 +1089,56 @@ a {
   &.-error {
     color: #f00;
   }
+}
+
+/*====================================================================================
+#	footer
+===================================================================================== */
+.footer {
+  // background-color: #0bd;
+}
+
+.footer__inner {
+}
+
+.footer__content {
+  padding: 30px;
+  background-color: #F4F4F4;
+}
+
+.footer__logo {
+  font-family: 'Qwitcher Grypen', cursive;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1;
+}
+
+// .footer__logo {
+//   width: 180px;
+//   margin: 0 auto;
+//   img {
+//     display: block;
+//   }
+// }
+
+.footer__nav-list {
+
+}
+
+.footer__nav-item {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.footer__nav-link {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer__copy {
+  padding: 30px;
+  text-align: center;
+  background-color: $color-main;
+  color: #fff;
+  font-size: 12px;
 }

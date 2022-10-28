@@ -111,7 +111,7 @@ a {
 #	header
 ===================================================================================== */
 .header {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(244, 244, 244, 0.6);
   height: 80px;
   position: fixed;
   width: 100%;
@@ -427,6 +427,10 @@ a {
 /*=================================================================================
 # service
 ==================================================================================*/
+.service {
+  background-color: #F4F4F4;
+}
+
 .service__area {
   margin-top: 50px;
   padding: 50px 45px;
@@ -436,7 +440,7 @@ a {
 
 .service__sub-head {
   position: absolute;
-  background: #fff;
+  background: #F4F4F4;
   font-size: 30px;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -556,6 +560,10 @@ a {
 /*====================================================================================
 #	work
 ===================================================================================== */
+.work {
+  background-color: #F4F4F4;
+}
+
 .work__inner {
   padding-left: 80px;
   position: relative;
@@ -565,7 +573,7 @@ a {
   position: absolute;
   width: 200px;
   text-align: center;
-  background: #fff;
+  background: #F4F4F4;
   letter-spacing: 1px;
   font-size: 35px;
   top: -25px;
@@ -1052,4 +1060,37 @@ a {
 
 .contact__message.-error {
   color: #f00;
+}
+
+/*====================================================================================
+#	footer
+===================================================================================== */
+.footer__content {
+  padding: 30px;
+  background-color: #F4F4F4;
+}
+
+.footer__logo {
+  font-family: 'Qwitcher Grypen', cursive;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1;
+}
+
+.footer__nav-item {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.footer__nav-link {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer__copy {
+  padding: 30px;
+  text-align: center;
+  background-color: #3EA1D1B3;
+  color: #fff;
+  font-size: 12px;
 }
