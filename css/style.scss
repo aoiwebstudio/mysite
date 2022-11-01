@@ -722,7 +722,7 @@ a {
 }
 
 .price__text-bg-color {
-  background-color: #f5f5f5;
+  background-color: $color-back;
 }
 
 .price__price-bg-color {
@@ -1136,7 +1136,7 @@ a {
 }
 
 .footer__copy {
-  padding: 30px;
+  padding: 25px;
   text-align: center;
   background-color: $color-main;
   color: #fff;
