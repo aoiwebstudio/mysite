@@ -322,9 +322,9 @@ a {
 #	main-visual
 ===================================================================================== */
 .main-visual {
-  height: 600px;
+  height: 700px;
   width: 100%;
-  background: url(../img/waves.jpg) no-repeat center center/cover;
+  background: url(../img/sunrise-main.jpg) no-repeat center center/cover;
   position: relative;
   margin-top: 80px;
 }
@@ -346,14 +346,14 @@ a {
 }
 
 .main-visual__title {
-  color: #686868;
+  color: #fff;
   font-family: 'Qwitcher Grypen', cursive;
-  font-size: 200px;
+  font-size: 120px;
   line-height: 1;
 }
 
 .main-visual__lead {
-  color: #686868;
+  color: #fff;
   font-size: 24px;
 }
 
@@ -415,13 +415,13 @@ a {
 }
 
 .profile__name {
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .profile__desc {
   text-align: justify;
   margin-top: 24px;
-  font-size: 24px;
+  font-size: 16px;
 }
 
 /*=================================================================================

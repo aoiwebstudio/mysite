@@ -22,17 +22,18 @@ const swiper = new Swiper('.swiper', {
 //swiper-end-------------------------------
 
 
-//wow.js
-new WOW().init();
 
 
 //jQuery
 jQuery(function () {
+  
+  //wow.js
+  new WOW().init();
 
   //スムーススクロール
   jQuery('a[href^="#"]').click(function() {
     
-    let speed = 300;
+    let speed = 600;
     let id = jQuery(this).attr("href");
     let target = jQuery("#" == id ? "html" : id);
     let position = jQuery(target).offset().top;
@@ -44,6 +45,30 @@ jQuery(function () {
       speed
     );
       
+    return false;  
+  });
+
+  //google-form
+  let $form = $('#js-form') //formタグに指定したID
+  $form.submit(function(e) {
+    $.ajax({
+      url: $form.attr('action'),
+      data: $form.serialize(),
+      type: "POST",
+      dataType: "xml",
+      statusCode: {
+        0: function() {
+          //送信に成功したときの処理
+          $form.slideUp();
+          $('#js-success').slideDown();
+        },
+        200: function() {
+          //送信に失敗したときの処理
+          $form.slideUp();
+          $('#js-error').slideDown();
+        }
+      }
+    });
     return false;  
   });
 
@@ -66,7 +91,7 @@ jQuery(function () {
       $('#js-form input[type="email"]').val() !== "" &&
       $('#js-form input[type="tel"]').val() !== "" &&
       $('#js-form textarea').val() !== "" &&
-      $('#js-form input[name="entry.54629690"]').prop('checked') === true,
+      $('#js-form input[name="entry.1929294793"]').prop('checked') === true,
       $('#js-form input[type="checkbox"]').prop('checked') === true
     ) {
       // すべて入力されたとき
