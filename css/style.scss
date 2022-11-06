@@ -149,6 +149,10 @@ a {
   z-index: 100;
   top: 0;
   left: 0;
+
+  @include mq('sp') {
+    height: 60px;
+  }
 }
 
 .header__inner {
@@ -160,6 +164,10 @@ a {
 .header__logo {
   width: 205px;
 
+  @include mq('sp') {
+    width: 182px;
+  }
+
   img {
     display: block;
   }
@@ -170,6 +178,10 @@ a {
   align-items: center;
   margin-left: auto;
   font-family: $font-en;
+
+  @include mq('sp') {
+    display: none;
+  }
 }
 
 .header__nav-item {
@@ -366,12 +378,20 @@ a {
   font-family: 'Qwitcher Grypen', cursive;
   font-size: 120px;
   line-height: 1;
+
+  @include mq('sp') {
+    font-size: 80px;
+  }
 }
 
 .main-visual__lead {
   // color: rgb(104, 104, 104);
   color: #fff;
   font-size: 24px;
+
+  @include mq('sp') {
+    font-size: 18px;
+  }
 
   .main-visual__lead--font {
     font-size: 30px;
@@ -422,11 +442,19 @@ a {
 .profile__content {
   margin-top: 50px;
   display: flex;
+
+  @include mq('sp') {
+    display: block;
+  }
 }
 
 .profile__img {
   width: 50%;
   text-align: center;
+
+  @include mq('sp') {
+    width: 100%;
+  }
   
   img {
     width: 500px;
@@ -437,17 +465,32 @@ a {
 .profile__text {
   margin-left: 30px;
   width: 50%;
+
+  @include mq('sp') {
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 0;
+  }
 }
 
 .profile__name {
   // margin-top: 30px;
   font-size: 30px;
+
+  @include mq('sp') {
+    font-size: 20px;
+  }
 }
 
 .profile__desc {
   text-align: justify;
   margin-top: 24px;
   font-size: 16px;
+
+  @include mq('sp') {
+    margin-top: 18px;
+    font-size: 14px;
+  }
 }
 
 
