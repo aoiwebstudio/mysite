@@ -20,7 +20,6 @@
       <div class="header__inner inner">
         <h1 class="header__logo"><a href="#"><img src="./img/logo黒.png" alt=""></a></h1>
         <ul class="header__nav">
-          <!-- <li><a href="#profile">プロフィール</a></li> -->
           <li class="header__nav-item"><a class="header__nav-link" href="#service">サービス</a></li>
           <li class="header__nav-item"><a class="header__nav-link" href="#company">事業概要</a></li>
           <li class="header__nav-item"><a class="header__nav-link" href="#work">制作実績</a></li>
@@ -41,22 +40,21 @@
 
     <div class="drawer-content">
       <div class="drawer-content__items">
-        <!-- <div class="drawer-content__item"><a href="#profile">プロフィール</a></div> -->
-        <div class="drawer-content__item"><a href="#service">サービス</a></div>
-        <div class="drawer-content__item"><a href="#about">事業概要</a></div>
-        <div class="drawer-content__item"><a href="#work">制作実績</a></div>
-        <div class="drawer-content__item"><a href="#price">価格表</a></div>
-        <div class="drawer-content__item"><a href="#contact">お問い合わせ</a></div>
+        <div class="drawer-content__item"><a href="#service" class="drawer-link">サービス</a></div>
+        <div class="drawer-content__item"><a href="#company" class="drawer-link">事業概要</a></div>
+        <div class="drawer-content__item"><a href="#work" class="drawer-link">制作実績</a></div>
+        <div class="drawer-content__item"><a href="#price" class="drawer-link">価格表</a></div>
+        <div class="drawer-content__item"><a href="#contact" class="drawer-link">お問い合わせ</a></div>
       </div>
     </div>
 
     <div class="drawer-background"></div>
 
     <!-- main-visual -->
-    <div class="main-visual wow fadeIn" data-wow-duration="2s">
+    <div class="main-visual">
       <div class="main-visual__content">
-        <h2 class="main-visual__title">Aoi.Web.Studio</h2>
-        <p class="main-visual__lead">あなたの思いを伝えるWebサイト制作</p>
+        <h2 class="main-visual__title wow flip" data-wow-duration="2s">Aoi.Web.Studio</h2>
+        <p class="main-visual__lead wow fadeIn" data-wow-duration="10s">あなたの思いを伝えるWebサイト制作</p>
         <!-- <p class="main-visual__lead">地域に寄り添い一緒に成長するホームページ制作会社です。<br>
           <span class="main-visual__lead--font">「ホームーページからの問い合わせがほしい」</span><br>そんなあなたのお手伝いをさせていただきます。
         </p> -->
@@ -285,7 +283,7 @@
             <div class="contact-form__row">
               <dt class="contact-form__label"><label for="your-tel">電話番号<span
                     class="contact-form__item">＊</span></label></dt>
-              <dd class="contact-form__input"><input type="tel" name="entry.963815652" id="your-tel" required></dd>
+              <dd class="contact-form__input"><input type="tel" pattern="[\d\-]*" name="entry.963815652" id="your-tel" required></dd>
             </div>
             <div class="contact-form__row">
               <dt class="contact-form__label">法人/個人の選択<span class="contact-form__item">＊</span></dt>
@@ -309,7 +307,7 @@
               <input type="checkbox" name="entry.845244292" value="プライバシーポリシーの同意" required>
               <span class="checkbox-parts"></span>
             </label>
-            <a href="#">プライバシーポリシー</a>に同意します。
+            <a href="#" class="contact-form__privacy">プライバシーポリシー</a>に同意します。
           </div>
           <div class="contact-form__button">
             <input id="js-submit" type="submit" value="送信" disabled>

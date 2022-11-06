@@ -145,7 +145,7 @@ a {
   height: 80px;
   position: fixed;
   width: 100%;
-  // box-shadow: 0 3px 3px rgba(#000000, 0.16);
+  box-shadow: 0 3px 3px rgba(#000000, 0.16);
   z-index: 100;
   top: 0;
   left: 0;
@@ -165,7 +165,7 @@ a {
   width: 205px;
 
   @include mq('sp') {
-    width: 182px;
+    width: 150px;
   }
 
   img {
@@ -219,7 +219,7 @@ a {
   &:hover,
   &.is-active {
     &::after {
-      background: $color-text;
+      background: $color-main;
       transform: scale(1, 1);
     }
   }    
@@ -240,21 +240,23 @@ a {
   }
 
   &.is-active {
-    transform: translate(-200px);
-  }
-
-  .drawer-icon__bar1 {
-    transform: rotate(-45deg);
-    top: 8px;
-  }
-
-  .drawer-icon__bar2 {
-    display: none;
-  }
-
-  .drawer-icon__bar3 {
-    transform: rotate(45deg);
-    top: 8px;
+    transform: translate(-170px);
+    
+    .drawer-icon__bar1 {
+      transform: rotate(-45deg);
+      top: 8px;
+      background-color: #fff;
+    }
+    
+    .drawer-icon__bar2 {
+      display: none;
+    }
+    
+    .drawer-icon__bar3 {
+      transform: rotate(45deg);
+      top: 8px;
+      background-color: #fff;
+    }
   }
 }
 
@@ -271,7 +273,7 @@ a {
   position: absolute;
   width: 22px;
   height: 4px;
-  background: #fff;
+  background: $color-text;
   top: 0;
   left: 0;
 }
@@ -289,7 +291,7 @@ a {
 }
 
 .drawer-content {
-  width: 200px;
+  width: 180px;
   height: 100%;
   position: fixed;
   top: 0;
@@ -311,25 +313,27 @@ a {
 
 .drawer-content__item {
   border-bottom: 1px dotted #707070;
+}
 
-  a {
-    display: block;
-    color: #707070;
-    text-decoration: none;
-    padding: 18px 20px;
-    position: relative;
+.drawer-link {
+  font-size: 14px;
+  display: block;
+  color: #707070;
+  text-decoration: none;
+  padding: 18px 20px;
+  position: relative;
 
-    &::after {
-      position: absolute;
-      content: "";
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 8px;
-      height: 11px;
-      background: url(../img/arrow-b@2x.png) no-repeat center center / contain;
-    }
+  &::after {
+    position: absolute;
+    content: "";
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 11px;
+    background: url(../img/arrow-b@2x.png) no-repeat center center / contain;
   }
+
 }
 
 .drawer-background {
@@ -338,7 +342,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(#000000, 0.16);
+  background: rgba(#000000, 0.7);
   z-index: 298;
   display: none;
 
@@ -380,7 +384,7 @@ a {
   line-height: 1;
 
   @include mq('sp') {
-    font-size: 80px;
+    font-size: 50px;
   }
 }
 
@@ -390,7 +394,7 @@ a {
   font-size: 24px;
 
   @include mq('sp') {
-    font-size: 18px;
+    font-size: 12px;
   }
 
   .main-visual__lead--font {
@@ -537,8 +541,10 @@ a {
 
 .service__box {
   width: 25%;
-  border: 2px solid #686868;
-  border-radius: 10px;
+  box-shadow: 0 0 10px $color-main;
+  // border: 2px solid #686868;
+  // box-shadow: 0 0 10px #9cc5c7;
+  // border-radius: 10px;
   padding: 30px 15px 50px;
   transition: transform 0.3s;
 
@@ -756,6 +762,7 @@ a {
   // width: inherit;
   display: flex;
   margin-top: 30px;
+  box-shadow: 0 3px 3px rgba(#000000, 0.16);
 }
 
 .price__wrap {
@@ -1124,6 +1131,14 @@ a {
       color: #fff;
     }
   }
+}
+
+.contact-form__privacy {
+  color: $color-main;
+  font-size: 18px;
+  // font-weight: 700;
+  // -webkit-text-stroke: 1px #fff;
+  text-shadow: #fff 1px 1px;
 }
 
 .contact__message {
