@@ -344,7 +344,7 @@ a {
 #	main-visual
 ===================================================================================== */
 .main-visual {
-  height: 700px;
+  height: 90vh;
   width: 100%;
   // background: url(../img/water.png) no-repeat center center / cover;
   background: url(../img/sunrise-main.jpg) no-repeat center center / cover;
@@ -353,7 +353,7 @@ a {
 
   @include mq('sp') {
     margin-top: 60px;
-    height: 420px;
+    height: 90vh;
   }
 }
 
@@ -509,6 +509,12 @@ a {
   padding: 50px 45px;
   border: 10px solid #686868;
   position: relative;
+
+  @include mq('sp') {
+    margin-top: 50px;
+    padding: 10px 10px;
+    border: transparent;  
+  }
 }
 
 .service__sub-head {
@@ -521,11 +527,19 @@ a {
   writing-mode: vertical-rl;
   height: 250px;
   text-align: center;
+
+  @include mq('sp') {
+    display: none;
+  }
 }
 
 .service__clearfix {
   display: flex;
   justify-content: center;
+
+  @include mq('sp') {
+    display: block;
+  }
 }
 
 .service__box {
@@ -537,12 +551,30 @@ a {
   padding: 30px 15px 50px;
   transition: transform 0.3s;
 
+  
   &:not(:first-child) {
     margin-left: 24px;
   }
-
+  
   &:hover {
     transform: scale(110%);
+  }
+
+  @include mq('sp') {
+    width: 100%;
+    margin-top: 30px;
+
+    &:not(:first-child) {
+      margin-left: 0;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:hover {
+      transform: scale(100%);
+    }
   }
 }
 
@@ -1198,14 +1230,14 @@ a {
 .to-top {
   position: fixed;
   right: 24px;
-  bottom: 65px;
+  bottom: 5px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease 0s;
 
   @include mq('sp') {
-    right: 12px;
-    bottom: 65px;
+    right: 15px;
+    bottom: 5px;
   }
 
   &.is-show {
@@ -1222,10 +1254,10 @@ a {
     }
 
     img {
-      width: 40px;
+      width: 20px;
 
       @include mq('sp') {
-        width: 30px;
+        width: 13px;
       }
     }
   }
