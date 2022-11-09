@@ -418,21 +418,21 @@ a {
 }
 
 /*====================================================================================
-#	profile
+#	about
 ===================================================================================== */
-.profile {
+.about {
+  background-color: $color-back;
+}
+
+.about__inner {
 
 }
 
-.profile__inner {
+.about__head {
 
 }
 
-.profile__head {
-
-}
-
-.profile__content {
+.about__content {
   margin-top: 50px;
   display: flex;
 
@@ -441,21 +441,25 @@ a {
   }
 }
 
-.profile__img {
+.about__img {
   width: 50%;
   text-align: center;
-
+  // box-shadow: 0 3px 3px rgba(#000000, 0.16);
+  box-shadow: 0px 10px 25px 0 rgba(#000000, 0.16);
+  
+  
   @include mq('sp') {
     width: 100%;
   }
   
   img {
-    width: 500px;
+    // width: 500px;
     max-width: 100%;
+    height: 100%;
   }
 }
 
-.profile__text {
+.about__text {
   margin-left: 30px;
   width: 50%;
 
@@ -466,7 +470,7 @@ a {
   }
 }
 
-.profile__name {
+.about__name {
   // margin-top: 30px;
   font-size: 30px;
 
@@ -475,7 +479,7 @@ a {
   }
 }
 
-.profile__desc {
+.about__desc {
   text-align: justify;
   margin-top: 24px;
   font-size: 16px;
@@ -487,13 +491,57 @@ a {
 }
 
 
+/*====================================================================================
+#	company
+===================================================================================== */
 
+.company {
+  background: url(../img/sea.jpg) no-repeat center center / cover ;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+.company__inner {
+
+}
+
+.company__head {
+
+}
+
+.company__info {
+  width: 800px;
+  max-width: 100%;
+  margin: 50px auto 0;
+}
+
+.company__info-row {
+  display: flex;
+  border-bottom: 1px solid $color-text;
+  padding-bottom: 3px;
+
+  &:not(:first-child) {
+    margin-top: 15px;
+  }
+}
+
+.company__dt {
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  font-weight: 700;
+}
+
+.company__dd {
+  margin: 0;
+  padding: 0;
+}
 
 /*=================================================================================
 # service
 ==================================================================================*/
 .service {
-  background-color: $color-back;
+  // background-color: $color-back;
 }
 
 .service__inner {
@@ -519,7 +567,7 @@ a {
 
 .service__sub-head {
   position: absolute;
-  background: $color-back;
+  background: #fff;
   font-size: 30px;
   top: 50%;
   transform: translateY(-50%);
@@ -609,51 +657,6 @@ a {
 }
 
 
-/*====================================================================================
-#	company
-===================================================================================== */
-
-.company {
-  background: url(../img/sea.jpg) no-repeat center center / cover ;
-  background-attachment: fixed;
-  color: #fff;
-}
-
-.company__inner {
-
-}
-
-.company__head {
-
-}
-
-.company__info {
-  width: 800px;
-  max-width: 100%;
-  margin: 50px auto 0;
-}
-
-.company__info-row {
-  display: flex;
-  border-bottom: 1px solid $color-text;
-  padding-bottom: 3px;
-
-  &:not(:first-child) {
-    margin-top: 15px;
-  }
-}
-
-.company__dt {
-  margin: 0;
-  padding: 0;
-  width: 150px;
-  font-weight: 700;
-}
-
-.company__dd {
-  margin: 0;
-  padding: 0;
-}
 
 /*====================================================================================
 #	work
