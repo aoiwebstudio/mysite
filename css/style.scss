@@ -201,6 +201,7 @@ a {
 .header__nav-link {
   color: $color-text;
   text-decoration: none;
+  letter-spacing: 3px;
   transition: all 0.4s ease 0s;
   position: relative;
 
@@ -323,6 +324,7 @@ a {
   // padding: 18px 20px;
   text-align: right;
   position: relative;
+  letter-spacing: 3px;
 }
 
 .drawer-background {
@@ -523,6 +525,10 @@ a {
   &:not(:first-child) {
     margin-top: 15px;
   }
+
+  @include mq('sp') {
+    display: block;
+  }
 }
 
 .company__dt {
@@ -535,6 +541,10 @@ a {
 .company__dd {
   margin: 0;
   padding: 0;
+
+  @include mq('sp') {
+    margin-left: 14px;
+  }
 }
 
 /*=================================================================================
@@ -673,6 +683,10 @@ a {
 .work__inner {
   padding-left: 80px;
   position: relative;
+
+  @include mq('sp') {
+    padding-left: 20px;
+  }
 }
 
 .work__sub-head {
@@ -685,6 +699,13 @@ a {
   top: -25px;
   left: 130px;
   z-index: 2;
+
+  @include mq('sp') {
+    width: 100px;
+    font-size: 20px;
+    top: -15px;
+    left: 80px;
+  }
 }
 
 .work__content {
@@ -692,6 +713,10 @@ a {
   // border: 10px solid #686868;
   border: solid #686868 ;
   border-width: 10px 0px 10px 10px;
+
+  @include mq('sp') {
+    border-width: 5px 0px 5px 5px;
+  }
 }
 
 .work__items {
@@ -726,7 +751,6 @@ a {
   margin-left: 30px;
 
   @include mq('sp') {
-    text-align: center;
     margin-top: 24px;
   }
 }
@@ -787,6 +811,10 @@ a {
   display: flex;
   margin-top: 30px;
   box-shadow: 0 3px 3px rgba(#000000, 0.16);
+
+  // @include mq('sp') {
+  //   display: block;
+  // }
 }
 
 .price__wrap {
@@ -795,6 +823,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include mq('sp') {
+    width: 100%;
+  }
 }
 
 .price__text-bg-color {
@@ -803,14 +835,15 @@ a {
 
 .price__price-bg-color {
   background-color: $color-main;
-  // background-color: #8BC1C9;
-  // background-color: #0bd;
-  // background-color: #c0c0c0;
 }
 
 .head-message {
   font-size: 3rem;
   letter-spacing: 20px;
+
+  @include mq('sp') {
+    font-size: 2rem;
+  }
 }
 
 .price-plan {
@@ -819,16 +852,8 @@ a {
 
 .col__text,
 .col__price {
-  // width: 50%;
-  // height: 300px;
   font-size: 1.3rem;
   text-align: center;
-
-  
-  // p {
-  //   margin: 0;
-  //   padding: 0;
-  // }
 }
 
 
