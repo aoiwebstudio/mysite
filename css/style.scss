@@ -801,11 +801,70 @@ a {
   margin-top: 40px;
 }
 
-.check {
-  display: inline-block;
-  width: 15px;
-  margin-right: 15px;
+.price__main-inner {
+
 }
+
+.price__pattern {
+  margin: 120px 0 40px;
+  display: flex;
+}
+
+.price__box {
+  border: 1px solid #52BBC1;
+  margin-right: 20px;
+  width: 360px;
+  // float: left;
+}
+
+.p__head {
+  padding: 40px 26px 16px;
+  position: relative;
+  background: linear-gradient(-135deg, #52bbc1 0%,#b6e9d2 100%);
+}
+
+.fo-maru {
+
+  span {
+
+  }
+}
+
+.p__content {
+
+}
+
+.icon-m {
+
+}
+
+.icon-s {
+
+}
+
+.sum {
+
+}
+
+.p-txt {
+
+}
+
+.ptn01 {
+  border: 1px solid #52BBC1;
+  margin-right: 20px;
+  background: linear-gradient(-135deg, #52bbc1 0%,#b6e9d2 100%);
+}
+
+.ptn02 {
+
+}
+
+.ptn03 {
+
+}
+
+
 
 
 /*====================================================================================
