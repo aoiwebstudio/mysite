@@ -811,16 +811,54 @@ a {
 }
 
 .price__box {
-  border: 1px solid #52BBC1;
-  margin-right: 20px;
   width: 360px;
-  // float: left;
+
+  &.ptn01 {
+    border: 1px solid #52BBC1;
+    margin-right: 20px;
+  }
+
+  &.ptn02 {
+    border: 1px solid #E07EA6;
+    margin-right: 20px;
+  }
+
+  &.ptn03 {
+    border: 1px solid #BDAB1D;
+  }
 }
 
 .p__head {
   padding: 40px 26px 16px;
   position: relative;
-  background: linear-gradient(-135deg, #52bbc1 0%,#b6e9d2 100%);
+
+  h3 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    padding-left: 0.4em;
+
+    span {
+      font-size: 14px;
+      display: block;
+    }
+  }
+
+  li {
+    border-radius: 100px;
+    background: #fff;
+    padding: 8px 8px 8px 12px;
+    margin-bottom: 8px;
+    font-size: 14px;
+
+    i {
+        padding-right: 10px;
+      }
+  }
 }
 
 .fo-maru {
@@ -831,37 +869,110 @@ a {
 }
 
 .p__content {
+  background: #fff;
+  text-align: center;
 
+  ul {
+    height: 480px;
+    padding-top: 12px;
+  }
+
+  li {
+    font-size: 13px;
+    padding: 12px 0 8px;
+    line-height: 1.5;
+
+    &:nth-child(even) {
+      background: #F4F4F5;
+    }
+  }
+
+  i {
+    font-size: 28px;
+    padding: 0 4px 6px;
+  }
+
+  .sum {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 1.5em 1em;
+  }
 }
 
 .icon-m {
-
+  
+  i {
+    font-size: 22px;
+  }
 }
 
 .icon-s {
 
+  i {
+    font-size: 18px;
+  }
 }
 
 .sum {
 
+  dt {
+    font-size: 16px;
+  }
 }
 
 .p-txt {
-
+  background: #fff;
+  padding: 20px 24px;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 .ptn01 {
-  border: 1px solid #52BBC1;
-  margin-right: 20px;
-  background: linear-gradient(-135deg, #52bbc1 0%,#b6e9d2 100%);
+
+  .p__head {
+    background: linear-gradient(-135deg, #52bbc1 0%,#b6e9d2 100%);
+  }
+
+  .p__content {
+
+    .sum {
+      background: linear-gradient(-135deg, #52bbc1 0%,#b6e9d2 100%);
+
+      dd {
+        font-size: 22px;
+      }
+    }
+  }
 }
 
 .ptn02 {
 
+  .p__head {
+    background: linear-gradient(-135deg, #eb7498 1%,#f7c8a2 100%);
+  }
+
+  .p__content {
+
+    .sum {
+      background: linear-gradient(-135deg, #eb7498 1%,#f7c8a2 100%);
+    }
+  }
 }
 
 .ptn03 {
 
+  .p__head {
+    background: linear-gradient(-135deg, #bdab1d 7%,#dedb63 100%);
+  }
+
+  .p__content {
+
+    .sum {
+      background: linear-gradient(-135deg, #bdab1d 7%,#dedb63 100%);
+    }
+  }
 }
 
 
