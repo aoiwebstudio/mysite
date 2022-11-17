@@ -911,12 +911,20 @@ a {
   background: linear-gradient(-135deg, #eb7498 1%, #f7c8a2 100%);
 }
 
+.ptn02 .p__content .sum dd {
+  font-size: 22px;
+}
+
 .ptn03 .p__head {
   background: linear-gradient(-135deg, #bdab1d 7%, #dedb63 100%);
 }
 
 .ptn03 .p__content .sum {
   background: linear-gradient(-135deg, #bdab1d 7%, #dedb63 100%);
+}
+
+.ptn03 .p__content .sum dd {
+  font-size: 22px;
 }
 
 /*====================================================================================
