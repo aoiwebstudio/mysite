@@ -562,108 +562,49 @@ a {
 
 }
 
-.service__area {
+.service__container {
   margin-top: 50px;
-  padding: 50px 45px;
-  border: 10px solid #686868;
-  position: relative;
-
-  @include mq('sp') {
-    margin-top: 50px;
-    padding: 10px 10px;
-    border: transparent;  
-  }
 }
 
-.service__sub-head {
-  position: absolute;
-  background: #fff;
-  font-size: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-  right: -30px;
-  writing-mode: vertical-rl;
-  height: 250px;
-  text-align: center;
-
-  @include mq('sp') {
-    display: none;
-  }
-}
-
-.service__clearfix {
+.service__items {
   display: flex;
-  justify-content: center;
-
-  @include mq('sp') {
-    display: block;
-  }
 }
 
-.service__box {
-  width: 25%;
-  box-shadow: 0 0 10px $color-main;
-  // border: 2px solid #686868;
-  // box-shadow: 0 0 10px #9cc5c7;
-  // border-radius: 10px;
-  padding: 30px 15px 50px;
-  transition: transform 0.3s;
-
-  
-  &:not(:first-child) {
-    margin-left: 24px;
-  }
-  
-  &:hover {
-    transform: scale(110%);
-  }
-
-  @include mq('sp') {
-    width: 100%;
-    margin-top: 30px;
-
-    &:not(:first-child) {
-      margin-left: 0;
-    }
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    &:hover {
-      transform: scale(100%);
-    }
-  }
+.service__item {
+  background-color: #fff;
+  width: 50%;
+  padding: 20px;
+  margin: 30px 30px 0;
+  box-shadow: 0 0 10px #9cc5c7;
 }
 
-.service__img {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto;
-  border: solid 3px #eee;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  img {
-    width: 100%;
-    padding: 5px;
-  }
+.service__item-icon {
+
 }
 
-.service__content {
-  width: 100%;
+.service__item-body {
+
 }
 
-.service__name {
-  margin-top: 3px;
-  text-align: center;
-  font-weight: 500;
+.service__item-title {
+
 }
 
-.service__text {
-  margin: 20px 0 0;
+.service__item-text {
+
+}
+
+.service__item-ul {
+
+}
+
+.service__item-li {
+
+}
+
+.text-underline {
+
 }
 
 
@@ -808,23 +749,40 @@ a {
 .price__pattern {
   margin: 120px 0 40px;
   display: flex;
+
+  @include mq('sp') {
+    display: block;
+    padding: 0 4px;
+  }
 }
 
 .price__box {
-  width: 360px;
+  max-width: 360px;
 
   &.ptn01 {
     border: 1px solid #52BBC1;
     margin-right: 20px;
+
+    @include mq('sp') {
+      margin: auto;
+    }
   }
 
   &.ptn02 {
     border: 1px solid #E07EA6;
     margin-right: 20px;
+
+    @include mq('sp') {
+      margin: 50px auto 0;
+    }
   }
 
   &.ptn03 {
     border: 1px solid #BDAB1D;
+
+    @include mq('sp') {
+      margin: 50px auto 0;
+    }
   }
 }
 
