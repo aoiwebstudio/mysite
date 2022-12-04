@@ -438,7 +438,7 @@ a {
   margin-top: 50px;
   display: flex;
   // box-shadow: 16px 16px 10px $color-main2;
-  box-shadow: 16px 16px 10px #3EA1D1B3;
+  box-shadow: 10px 10px 10px #3EA1D1B3;
 
   @include mq('sp') {
     display: block;
@@ -705,7 +705,8 @@ a {
 }
 
 .work__item {
-  border: 2px solid $color-text;
+  // border: 2px solid $color-text;
+  box-shadow: 0 0 10px $color-main;
   padding: 2px;
 }
 
@@ -719,10 +720,27 @@ a {
 }
 
 .work__img {
+  background-color: #fff;
+  padding-top: (205 / 400 * 100%);
+  position: relative;
+  overflow: hidden;
 
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    transition: transform .4s;
+  }
 }
 
 //swiper---------------
+
+
+element.style {
+  
+}
 
 .swiper-pagination {
   text-align: left;
