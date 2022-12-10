@@ -12,7 +12,8 @@ $color-text: #686868;
 $color-btn: #0bd;
 // $color-btn: #686868;
 $color-title: #0bd;
-$color-back:#F4F4F4;
+$color-back: #F1F1F1;
+// $color-back: #F4F4F4;
 
 $font-en: 'Lato', sans-serif;
 $font-ja: 'Noto Sans JP', sans-serif;
@@ -141,12 +142,12 @@ a {
 #	header
 ===================================================================================== */
 .header {
-  background: rgba($color-back, $alpha: 0.6);
+  // background: rgba($color-back, $alpha: 0.6);
   // background: rgba($color-sub-main, $alpha: 0.6);
   height: 80px;
   position: fixed;
   width: 100%;
-  box-shadow: 0 3px 3px rgba(#000000, 0.16);
+  // box-shadow: 0 3px 3px rgba(#000000, 0.16);
   z-index: 100;
   top: 0;
   left: 0;
@@ -189,6 +190,7 @@ a {
 
   &:not(:first-child) {
     margin-left: 5px;
+
     &::before {
       content: "/";
       margin-right: 5px;
@@ -224,7 +226,7 @@ a {
       background: $color-main;
       transform: scale(1, 1);
     }
-  }    
+  }
 }
 
 /*====================================================================================
@@ -242,16 +244,16 @@ a {
   }
 
   &.is-active {
-    
+
     .drawer-icon__bar1 {
       transform: rotate(45deg);
       top: 8px;
     }
-    
+
     .drawer-icon__bar2 {
       display: none;
     }
-    
+
     .drawer-icon__bar3 {
       transform: rotate(-45deg);
       top: 8px;
@@ -272,7 +274,7 @@ a {
   position: absolute;
   width: 30px;
   height: 2px;
-  background: $color-main;
+  background: $color-text;
   top: 0;
   left: 0;
   transition: all 0.3s ease 0s;
@@ -296,7 +298,8 @@ a {
   position: fixed;
   top: 60px;
   right: 0;
-  background-color: $color-main;
+  background-color: $color-text;
+  // background-color: $color-main;
   // box-shadow: 0 0 3px rgba(#000000, 0.16);
   z-index: 299;
   transform: translateX(105%);
@@ -307,13 +310,9 @@ a {
   }
 }
 
-.drawer-content__items {
-  
-}
+.drawer-content__items {}
 
-.drawer-content__item {
-
-}
+.drawer-content__item {}
 
 .drawer-link {
   font-size: 18px;
@@ -346,16 +345,16 @@ a {
 #	main-visual
 ===================================================================================== */
 .main-visual {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
-  // background: url(../img/water.png) no-repeat center center / cover;
-  background: url(../img/sunrise-main.jpg) no-repeat center center / cover;
+  background: url(../img/main-visual.jpg) no-repeat center center / cover;
   position: relative;
-  margin-top: 80px;
+  // margin-top: 80px;
 
   @include mq('sp') {
-    margin-top: 60px;
-    height: 90vh;
+    background: url(../img/main-visual-sp.jpg) no-repeat right center / cover;
+    // margin-top: 60px;
+    height: 100vh;
   }
 }
 
@@ -365,27 +364,35 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+
+  @include mq('sp') {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .main-visual__title {
   // color: rgb(104, 104, 104);
-  color: #fff;
+  color: $color-text;
+  // color: #000;
   font-family: 'Qwitcher Grypen', cursive;
   font-size: 120px;
   line-height: 1;
 
   @include mq('sp') {
-    font-size: 50px;
+    font-size: 80px;
   }
 }
 
 .main-visual__lead {
   // color: rgb(104, 104, 104);
-  color: #fff;
+  color: $color-text;
+  // color: #000;
   font-size: 24px;
 
   @include mq('sp') {
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .main-visual__lead--font {
@@ -423,22 +430,19 @@ a {
 #	about
 ===================================================================================== */
 .about {
-  background-color: $color-back;
+  background-color: #fff;
 }
 
-.about__inner {
+.about__inner {}
 
-}
-
-.about__head {
-
-}
+.about__head {}
 
 .about__content {
   margin-top: 50px;
   display: flex;
   // box-shadow: 16px 16px 10px $color-main2;
-  box-shadow: 10px 10px 10px #3EA1D1B3;
+  box-shadow: 10px 10px 10px $color-text;
+  // box-shadow: 10px 10px 10px #3EA1D1B3;
 
   @include mq('sp') {
     display: block;
@@ -448,11 +452,11 @@ a {
 .about__img {
   width: 50%;
   text-align: center;
-  
+
   @include mq('sp') {
     width: 100%;
   }
-  
+
   img {
     // width: 500px;
     max-width: 100%;
@@ -461,9 +465,9 @@ a {
 }
 
 .about__text {
-  margin-left: 30px;
-  padding: 0 20px 20px 0;
+  padding: 20px 20px 20px 30px;
   width: 50%;
+  background-color: $color-back;
 
   @include mq('sp') {
     width: 100%;
@@ -498,18 +502,14 @@ a {
 ===================================================================================== */
 
 .company {
-  background: url(../img/sea.jpg) no-repeat center center / cover ;
+  background: url(../img/sea.jpg) no-repeat center center / cover;
   background-attachment: fixed;
   color: #fff;
 }
 
-.company__inner {
+.company__inner {}
 
-}
-
-.company__head {
-
-}
+.company__head {}
 
 .company__info {
   width: 800px;
@@ -554,13 +554,9 @@ a {
   // background-color: $color-back;
 }
 
-.service__inner {
+.service__inner {}
 
-}
-
-.service__head {
-
-}
+.service__head {}
 
 .service__container {
   margin-top: 50px;
@@ -579,7 +575,8 @@ a {
   width: 50%;
   padding: 20px;
   margin: 30px 30px 0;
-  box-shadow: 0 0 10px $color-main;
+  box-shadow: 0 0 10px $color-text;
+  // box-shadow: 0 0 10px $color-main;
   // box-shadow: 0 0 10px #9cc5c7;
 
   @include mq('sp') {
@@ -595,16 +592,15 @@ a {
 
 
 .service__item-icon {
-  color: $color-main;
+  color: $color-text;
+  // color: $color-main;
   // color: #9cc5c7;
   font-size: 48px;
   text-align: center;
   padding: 10px;
 }
 
-.service__item-body {
-
-}
+.service__item-body {}
 
 .service__item-title {
   font-size: 24px;
@@ -643,7 +639,7 @@ a {
 }
 
 .text-underline {
-  background: linear-gradient(transparent 80%, $color-main 0%);
+  background: linear-gradient(transparent 95%, $color-main 0%);
   // background: linear-gradient(transparent 80%, #9cc5c7 0%);
 }
 
@@ -657,9 +653,7 @@ a {
   background-color: $color-back;
 }
 
-.work__head {
-
-}
+.work__head {}
 
 .work__inner {
   padding-left: 80px;
@@ -692,7 +686,7 @@ a {
 .work__content {
   margin-top: 100px;
   // border: 10px solid #686868;
-  border: solid #686868 ;
+  border: solid #686868;
   border-width: 10px 0px 10px 10px;
 
   @include mq('sp') {
@@ -706,7 +700,7 @@ a {
 
 .work__item {
   // border: 2px solid $color-text;
-  box-shadow: 0 0 10px $color-main;
+  box-shadow: 0 0 10px $color-text;
   padding: 2px;
 }
 
@@ -738,9 +732,7 @@ a {
 //swiper---------------
 
 
-element.style {
-  
-}
+element.style {}
 
 .swiper-pagination {
   text-align: left;
@@ -783,17 +775,13 @@ element.style {
 /*====================================================================================
 #	price
 ===================================================================================== */
-.price {
-
-}
+.price {}
 
 .price__inner {
-
+  
 }
 
-.price__head {
-
-}
+.price__head {}
 
 .price__lead {
   text-align: center;
@@ -801,12 +789,13 @@ element.style {
 }
 
 .price__main-inner {
-
+  
 }
 
 .price__pattern {
   margin: 120px 0 40px;
   display: flex;
+  justify-content: space-between;
 
   @include mq('sp') {
     display: block;
@@ -818,8 +807,7 @@ element.style {
   max-width: 360px;
 
   &.ptn01 {
-    border: 1px solid #52BBC1;
-    margin-right: 20px;
+    border: 1px solid #EBE8E3;
 
     @include mq('sp') {
       margin: auto;
@@ -827,8 +815,7 @@ element.style {
   }
 
   &.ptn02 {
-    border: 1px solid #E07EA6;
-    margin-right: 20px;
+    border: 1px solid #E3D8D3;
 
     @include mq('sp') {
       margin: 50px auto 0;
@@ -836,7 +823,7 @@ element.style {
   }
 
   &.ptn03 {
-    border: 1px solid #BDAB1D;
+    border: 1px solid #C9C6D5;
 
     @include mq('sp') {
       margin: 50px auto 0;
@@ -849,7 +836,7 @@ element.style {
   position: relative;
 
   h3 {
-    color: #fff;
+    color: $color-text;
     font-size: 36px;
     font-weight: 700;
     text-align: center;
@@ -872,16 +859,14 @@ element.style {
     font-size: 14px;
 
     i {
-        padding-right: 10px;
-      }
+      padding-right: 10px;
+    }
   }
 }
 
 .fo-maru {
 
-  span {
-
-  }
+  span {}
 }
 
 .p__content {
@@ -912,13 +897,13 @@ element.style {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
+    color: $color-text;
     padding: 1.5em 1em;
   }
 }
 
 .icon-m {
-  
+
   i {
     font-size: 22px;
   }
@@ -948,13 +933,13 @@ element.style {
 .ptn01 {
 
   .p__head {
-    background: linear-gradient(-135deg, #52bbc1 0%,#b6e9d2 100%);
+    background: #EBE8E3;
   }
 
   .p__content {
 
     .sum {
-      background: linear-gradient(-135deg, #52bbc1 0%,#b6e9d2 100%);
+      background: #EBE8E3;
 
       dd {
         font-size: 22px;
@@ -966,13 +951,13 @@ element.style {
 .ptn02 {
 
   .p__head {
-    background: linear-gradient(-135deg, #eb7498 1%,#f7c8a2 100%);
+    background: #E3D8D3;
   }
 
   .p__content {
 
     .sum {
-      background: linear-gradient(-135deg, #eb7498 1%,#f7c8a2 100%);
+      background: #E3D8D3;
 
       dd {
         font-size: 22px;
@@ -984,13 +969,13 @@ element.style {
 .ptn03 {
 
   .p__head {
-    background: linear-gradient(-135deg, #bdab1d 7%,#dedb63 100%);
+    background: #C9C6D5;
   }
 
   .p__content {
 
     .sum {
-      background: linear-gradient(-135deg, #bdab1d 7%,#dedb63 100%);
+      background: #C9C6D5;
 
       dd {
         font-size: 22px;
@@ -1009,18 +994,12 @@ element.style {
   background: url(../img/sand.jpg) no-repeat center center / cover;
   background-attachment: fixed;
 
-  @include mq('sp') {
-  
-  }
+  @include mq('sp') {}
 }
 
-.contact__inner {
+.contact__inner {}
 
-}
-
-.contact__head {
-
-}
+.contact__head {}
 
 .contact-form {
   margin-top: 64px;
@@ -1069,7 +1048,8 @@ element.style {
   color: #fff;
   font-size: 18px;
   font-weight: 700;
-  background: $color-main2;
+  background: rgba($color-text, 0.7);
+  // background: $color-main2;
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -1090,7 +1070,8 @@ element.style {
       right: -8px;
       border-style: solid;
       border-width: 20px 0 20px 8px;
-      border-color: transparent transparent transparent $color-main2;
+      border-color: transparent transparent transparent #8F8D8D;
+      // border-color: transparent transparent transparent $color-main2;
     }
   }
 
@@ -1103,7 +1084,8 @@ element.style {
       right: -8px;
       border-style: solid;
       border-width: 20px 0 20px 8px;
-      border-color: transparent transparent transparent $color-main2;
+      border-color: transparent transparent transparent #8F8D8D;
+      // border-color: transparent transparent transparent $color-main2;
     }
   }
 
@@ -1119,8 +1101,8 @@ element.style {
     height: 40px;
 
     @include mq('sp') {
-        width: 100%;
-      }
+      width: 100%;
+    }
   }
 }
 
@@ -1181,21 +1163,24 @@ element.style {
     left: 0;
     opacity: 0;
 
-    &:checked + .contact-form__parts {
-      background: $color-main2;
+    &:checked+.contact-form__parts {
+      background: rgba($color-text, 0.7);
+      // background: $color-main2;
       color: #fff;
       border-radius: 1px;
     }
 
-    &:focus-visible + .contact-form__parts {
-      outline: -webkit-focus-ring-color auto 1px;;
+    &:focus-visible+.contact-form__parts {
+      outline: -webkit-focus-ring-color auto 1px;
+      ;
     }
   }
 
   .contact-form__parts {
     display: block;
     background: #fff;
-    color: $color-main;
+    color: rgba($color-text, 0.7);
+    // color: $color-main;
     height: 38px;
     line-height: 38px;
     width: 80px;
@@ -1210,7 +1195,7 @@ element.style {
     border-radius: 1px;
     box-shadow: 5px 6px 16px rgba(96, 96, 96, 0.16);
   }
-  
+
   textarea {
     min-height: 120px;
     resize: vertical;
@@ -1243,30 +1228,31 @@ element.style {
   display: inline-block;
   height: 22px;
   width: 22px;
-  
+
   [type="checkbox"] {
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
-  
-    &:checked + .checkbox-parts {
+
+    &:checked+.checkbox-parts {
       width: 10px;
       border-top: 0;
       border-left: 0;
-      border-right: 4px solid $color-main;
-      border-bottom: 4px solid $color-main;
+      border-right: 4px solid rgba($color-text, 0.7);
+      border-bottom: 4px solid rgba($color-text, 0.7);
       background: transparent;
       transform: rotate(45deg);
       top: -5px;
       left: 5px;
     }
 
-    &:focus-visible + .checkbox-parts {
-      outline: -webkit-focus-ring-color auto 1px;;
+    &:focus-visible+.checkbox-parts {
+      outline: -webkit-focus-ring-color auto 1px;
+      ;
     }
 
-    &:checked:focus-visible + .checkbox-parts {
+    &:checked:focus-visible+.checkbox-parts {
       outline: none;
     }
   }
@@ -1277,7 +1263,7 @@ element.style {
   display: inline-block;
   height: 22px;
   width: 22px;
-  border: 1px solid $color-main;
+  border: 1px solid rgba($color-text, 0.7);
   background: #fff;
   top: 0;
   left: 0;
@@ -1295,9 +1281,9 @@ element.style {
   [type="submit"] {
     display: inline-block;
     background: #fff;
-    border: 1px solid $color-main;
+    border: 1px solid rgba($color-text, 0.7);
     border-radius: 0;
-    color: #0bd;
+    color: $color-text;
     width: 137px;
     height: 46px;
     font-size: 14px;
@@ -1307,14 +1293,14 @@ element.style {
     font-weight: 700;
 
     &.-active {
-      background: $color-main;
+      background: rgba($color-text, 0.7);
       color: #fff;
     }
   }
 }
 
 .contact-form__privacy {
-  color: $color-main;
+  color: $color-text;
   font-size: 18px;
   // font-weight: 700;
   // -webkit-text-stroke: 1px #fff;
@@ -1338,8 +1324,7 @@ element.style {
   // background-color: #0bd;
 }
 
-.footer__inner {
-}
+.footer__inner {}
 
 .footer__content {
   padding: 30px;
@@ -1361,9 +1346,7 @@ element.style {
 //   }
 // }
 
-.footer__nav-list {
-
-}
+.footer__nav-list {}
 
 .footer__nav-item {
   margin-top: 10px;
@@ -1378,7 +1361,7 @@ element.style {
 .footer__copy {
   padding: 25px;
   text-align: center;
-  background-color: $color-main;
+  background-color: rgba($color-text, 0.7);
   color: #fff;
   font-size: 12px;
 }
