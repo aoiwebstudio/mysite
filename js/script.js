@@ -30,6 +30,15 @@ jQuery(function () {
   //wow.js
   new WOW().init();
 
+  //ヘッダの色を変える
+  jQuery(window).on('scroll', function () {
+    if ($('.fv').height() < jQuery(this).scrollTop()) {
+        jQuery('.header').addClass('header-change-color');
+    } else {
+        jQuery('.header').removeClass('header-change-color');
+    }
+});
+
   //スムーススクロール
   jQuery('a[href^="#"]').click(function() {
     
@@ -106,13 +115,11 @@ jQuery(function () {
 
   //totop
   jQuery(window).on('scroll', function() {
-
     if (100 < jQuery(this).scrollTop()) {
       jQuery('.to-top').addClass('is-show');
     } else {
       jQuery('.to-top').removeClass('is-show');
     }
-    
   });
   
 
