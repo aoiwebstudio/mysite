@@ -100,7 +100,7 @@ jQuery(function () {
       $('#js-form input[type="email"]').val() !== "" &&
       $('#js-form input[type="tel"]').val() !== "" &&
       $('#js-form textarea').val() !== "" &&
-      $('#js-form input[name="entry.1929294793"]').prop('checked') === true &&
+      // $('#js-form input[name="entry.1929294793"]').prop('checked') === true &&
       $('#js-form input[type="checkbox"]').prop('checked') === true
     ) {
       // すべて入力されたとき

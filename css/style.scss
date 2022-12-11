@@ -85,6 +85,7 @@ a {
   width: $layout-width-inner;
   max-width: 100%;
   margin: 0 auto;
+  padding: 0 16px;
 
   // @include mq('tab') {
   //   padding-left: 24px;
@@ -164,6 +165,7 @@ a {
   display: flex;
   align-items: center;
   height: inherit;
+  padding: 0 8px;
 }
 
 .header__logo {
@@ -639,7 +641,10 @@ a {
   }
 
   p {
-    height: 30px;
+    // height: 30px;
+    @include mq('sp') {
+      text-align: center;
+    }
   }
 }
 
@@ -817,10 +822,16 @@ element.style {}
   display: flex;
   justify-content: space-between;
 
+  @include mq('tab') {
+    display: block;
+    padding: 0 4px;
+    // margin: 80px 0 35px;
+  }
+
   @include mq('sp') {
     display: block;
     padding: 0 4px;
-    margin: 60px 0 30px;
+    // margin: 60px 0 30px;
   }
 }
 
@@ -830,6 +841,10 @@ element.style {}
   &.ptn01 {
     border: 1px solid #EBE8E3;
 
+    @include mq('tab') {
+      margin: auto;
+    }
+
     @include mq('sp') {
       margin: auto;
     }
@@ -838,6 +853,10 @@ element.style {}
   &.ptn02 {
     border: 1px solid #E3D8D3;
 
+    @include mq('tab') {
+      margin: 50px auto 0;
+    }
+
     @include mq('sp') {
       margin: 50px auto 0;
     }
@@ -845,6 +864,10 @@ element.style {}
 
   &.ptn03 {
     border: 1px solid #C9C6D5;
+
+    @include mq('tab') {
+      margin: 50px auto 0;
+    }
 
     @include mq('sp') {
       margin: 50px auto 0;
@@ -1028,8 +1051,12 @@ element.style {}
 .contact-form {
   margin: 64px auto 30px;
   max-width: 800px;
-  padding: 80px 0 80px;
+  padding: 80px 4px 80px;
   background-color: #E5E0DB;
+
+  // @include mq('tab') {
+  //   padding: 30px 4px 30px;
+  // }
 
   @include mq('sp') {
     margin-top: 33px;
@@ -1334,7 +1361,7 @@ element.style {}
   font-size: 18px;
   // font-weight: 700;
   // -webkit-text-stroke: 1px #fff;
-  text-shadow: #fff 1px 1px;
+  // text-shadow: #fff 1px 1px;
 }
 
 .contact__message {
@@ -1406,6 +1433,7 @@ element.style {}
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease 0s;
+  z-index: 101;
 
   @include mq('sp') {
     right: 15px;
