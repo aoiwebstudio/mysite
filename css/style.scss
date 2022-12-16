@@ -352,13 +352,13 @@ a {
 .main-visual {
   height: 100vh;
   width: 100%;
-  background: url(../img/main-visual.jpg) no-repeat center center / cover;
+  background: url(../img/main-visual101.jpg) no-repeat center center / cover;
   // background-attachment: fixed;
   position: relative;
   // margin-top: 80px;
 
   @include mq('sp') {
-    background: url(../img/main-visual-sp.jpg) no-repeat center center / cover;
+    // background: url(../img/main-visual-sp.jpg) no-repeat center center / cover;
     // margin-top: 60px;
     height: 100vh;
   }
@@ -372,11 +372,11 @@ a {
   background-attachment: fixed;
   text-align: center;
 
-  @include mq('sp') {
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  // @include mq('sp') {
+  //   top: 30%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  // }
 }
 
 .main-visual__title {
@@ -449,30 +449,40 @@ a {
   margin-top: 80px;
   display: flex;
   // box-shadow: 16px 16px 10px $color-main2;
-  box-shadow: 10px 10px 10px $color-text;
+  // box-shadow: 10px 10px 10px $color-text;
   // box-shadow: 10px 10px 10px #3EA1D1B3;
 
   @include mq('sp') {
     display: block;
-    box-shadow: none;
+    // box-shadow: none;
   }
 }
 
 .about__img {
   width: 50%;
-  text-align: center;
+  position: relative;
 
   @include mq('sp') {
     width: 100%;
+    text-align: center;
   }
 
   img {
-    // width: 500px;
-    max-width: 100%;
-    height: 100%;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: 0 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
     @include mq('sp') {
-      max-height: 100%;
+      position: static;
+      width: 250px;
+      height: 250px;
+      transform: none;
     }
   }
 }
@@ -480,7 +490,7 @@ a {
 .about__text {
   padding: 30px 20px 20px 30px;
   width: 50%;
-  background-color: #E5E0DB;
+  background-color: $color-back;
 
   @include mq('sp') {
     width: 100%;
@@ -518,6 +528,10 @@ a {
   background: url(../img/mac.jpg) no-repeat center center / cover;
   background-attachment: fixed;
   color: #fff;
+
+  @include mq('sp') {
+    background: url(../img/mac-pc.jpg) no-repeat center center / cover;
+  }
 }
 
 .company__inner {}
@@ -589,14 +603,13 @@ a {
   width: 50%;
   padding: 20px;
   margin: 30px 30px 0;
-  box-shadow: 0 0 10px $color-text;
+  box-shadow: 0 0 10px $color-title;
   // box-shadow: 0 0 10px $color-main;
-  // box-shadow: 0 0 10px #9cc5c7;
+  box-shadow: 0 0 10px #9cc5c7;
 
   @include mq('sp') {
     width: 100%;
     margin: 0;
-
 
     &:not(:first-child) {
       margin-top: 30px;
@@ -614,9 +627,7 @@ a {
   padding: 10px;
 }
 
-.service__item-body {
-  
-}
+.service__item-body {}
 
 .service__item-title {
   // color: #a58e84;
@@ -641,6 +652,7 @@ a {
   }
 
   p {
+
     // height: 30px;
     @include mq('sp') {
       text-align: center;
@@ -802,9 +814,7 @@ element.style {}
   background-color: $color-back;
 }
 
-.price__inner {
-  
-}
+.price__inner {}
 
 .price__head {}
 
@@ -813,9 +823,7 @@ element.style {}
   margin-top: 40px;
 }
 
-.price__main-inner {
-  
-}
+.price__main-inner {}
 
 .price__pattern {
   margin: 120px 0 40px;
@@ -1052,6 +1060,7 @@ element.style {}
   margin: 64px auto 30px;
   max-width: 800px;
   padding: 80px 4px 80px;
+  // background-color: $color-back;
   background-color: #E5E0DB;
 
   // @include mq('tab') {
@@ -1337,10 +1346,12 @@ element.style {}
 
   [type="submit"] {
     display: inline-block;
-    background: #fff;
+    // background: #fff;
+    background: $color-text;
     border: 1px solid $color-text;
     border-radius: 0;
-    color: $color-text;
+    // color: $color-text;
+    color: #fff;
     width: 137px;
     height: 46px;
     font-size: 14px;

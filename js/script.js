@@ -92,26 +92,33 @@ jQuery(function () {
     return false;
   });
 
+  jQuery('.drawer-link').on('click', function () {
+    jQuery('.drawer-icon').removeClass('is-active');
+    jQuery('.drawer-content').removeClass('is-active');
+    jQuery('.drawer-background').removeClass('is-active');
+    });
+
+
   //formの入力確認
-  let $submit = $('#js-submit');
-  $('#js-form input, #js-form textarea').on('change', function() {
-    if(
-      $('#js-form input[type="text"]').val() !== "" &&
-      $('#js-form input[type="email"]').val() !== "" &&
-      $('#js-form input[type="tel"]').val() !== "" &&
-      $('#js-form textarea').val() !== "" &&
-      // $('#js-form input[name="entry.1929294793"]').prop('checked') === true &&
-      $('#js-form input[type="checkbox"]').prop('checked') === true
-    ) {
-      // すべて入力されたとき
-      $submit.prop('disabled', false);
-      $submit.addClass('-active');
-    } else {
-      // 入力されていないとき
-      $submit.prop('disabled', true);
-      $submit.removeClass('-active');
-    }
-  });
+  // let $submit = $('#js-submit');
+  // $('#js-form input, #js-form textarea').on('change', function() {
+  //   if(
+  //     $('#js-form input[type="text"]').val() !== "" &&
+  //     $('#js-form input[type="email"]').val() !== "" &&
+  //     $('#js-form input[type="tel"]').val() !== "" &&
+  //     $('#js-form textarea').val() !== "" &&
+  //     // $('#js-form input[name="entry.1929294793"]').prop('checked') === true &&
+  //     $('#js-form input[type="checkbox"]').prop('checked') === true
+  //   ) {
+  //     // すべて入力されたとき
+  //     $submit.prop('disabled', false);
+  //     $submit.addClass('-active');
+  //   } else {
+  //     // 入力されていないとき
+  //     $submit.prop('disabled', true);
+  //     $submit.removeClass('-active');
+  //   }
+  // });
 
   //totop
   jQuery(window).on('scroll', function() {
