@@ -209,7 +209,7 @@ a {
 }
 
 .header__nav-link:hover::after, .header__nav-link.is-active::after {
-  background: #555555;
+  background: #3EA1D1;
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
 }
@@ -587,10 +587,8 @@ a {
   width: 50%;
   padding: 20px;
   margin: 30px 30px 0;
-  -webkit-box-shadow: 0 0 10px #0bd;
-          box-shadow: 0 0 10px #0bd;
-  -webkit-box-shadow: 0 0 10px #9cc5c7;
-          box-shadow: 0 0 10px #9cc5c7;
+  -webkit-box-shadow: 0 0 3px #555555;
+          box-shadow: 0 0 3px #555555;
 }
 
 @media (max-width: 767px) {
@@ -1441,3 +1439,4 @@ a {
     width: 13px;
   }
 }
+/*# sourceMappingURL=style.css.map */
